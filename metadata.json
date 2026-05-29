@@ -1,0 +1,6 @@
+{
+  "name": "SheBuilds Chennai Hack",
+  "description": "National-level women-in-tech Hackathon 'Code & Challenge 3.0', organized in collaboration with Intellexa REC of Rajalakshmi Engineering College.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
