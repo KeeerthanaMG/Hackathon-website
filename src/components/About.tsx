@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useInView } from 'motion/react';
 import { Building2, Award, ArrowRight, ShieldCheck, Users, Zap, UserCheck, Code, Sparkles, Binary } from 'lucide-react';
 import { eligibilityCards } from '../data';
 
@@ -7,7 +7,96 @@ interface AboutProps {
   onRegisterClick: () => void;
 }
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25, // falls one by one (first, then next, then third)
+    }
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.15,
+      staggerDirection: -1
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: -250, // start far above
+    transition: {
+      duration: 0
+    }
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "tween",
+      ease: [0.25, 1, 0.5, 1], // easeOutQuart (smooth deceleration)
+      duration: 1.0 // slide down in 1.0s
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: 200, // continues moving downward before disappearing
+    transition: {
+      type: "tween",
+      ease: [0.25, 1, 0.5, 1],
+      duration: 1.0, // exit slide down in 1.0s
+      delay: 0.1 // starts shortly after text begins to fade
+    }
+  }
+};
+
+const contentVariants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 0
+    }
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      delay: 0.35, // starts during the drop
+      duration: 0.65 // fades in smoothly to finish exactly with the card settling
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      type: "tween",
+      ease: "easeIn",
+      duration: 0.3 // text fades out first
+    }
+  }
+};
+
+
 export default function About({ onRegisterClick }: AboutProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.15 });
+  const [animationState, setAnimationState] = useState<"hidden" | "visible" | "exit">("hidden");
+
+  useEffect(() => {
+    if (isInView) {
+      setAnimationState("visible");
+    } else {
+      setAnimationState("exit");
+    }
+  }, [isInView]);
+
+  const handleAnimationComplete = (definition: any) => {
+    if (definition === "exit") {
+      setAnimationState("hidden");
+    }
+  };
+
   return (
     <section id="about" className="py-28 bg-black border-t border-white/5 relative overflow-hidden">
       {/* Background glow of vivid neon pink */}
@@ -171,40 +260,49 @@ export default function About({ onRegisterClick }: AboutProps) {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <motion.div 
+            ref={containerRef}
+            variants={containerVariants}
+            animate={animationState}
+            initial="hidden"
+            onAnimationComplete={handleAnimationComplete}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
             {eligibilityCards.map((card, idx) => {
               const IconComp = card.icon;
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.15, duration: 0.6 }}
+                  variants={cardVariants}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
                   style={{ boxShadow: `0 10px 30px -15px ${card.glow}` }}
-                  className="liquid-glass rounded-2xl p-6 hover:border-brand-pink/40 transition-all duration-300 relative group flex flex-col justify-between"
+                  className="liquid-glass rounded-2xl p-6 hover:border-brand-pink/40 transition-colors duration-300 relative group flex flex-col justify-between"
                 >
-                  <div>
-                    {/* Glowing neon background inside card */}
-                    <div className="h-10 w-10 rounded-xl bg-brand-pink/10 border border-brand-pink/30 flex items-center justify-center mb-5 text-brand-pink group-hover:scale-110 transition-transform duration-300">
-                      <IconComp className="h-5 w-5" />
+                  <motion.div
+                    variants={contentVariants}
+                    className="w-full h-full flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* Glowing neon background inside card */}
+                      <div className="h-10 w-10 rounded-xl bg-brand-pink/10 border border-brand-pink/30 flex items-center justify-center mb-5 text-brand-pink group-hover:scale-110 transition-transform duration-300">
+                        <IconComp className="h-5 w-5" />
+                      </div>
+                      <h4 className="text-base md:text-lg font-bold text-white mb-2 uppercase tracking-wide">
+                        {card.title}
+                      </h4>
+                      <p className="text-xs text-white/60 leading-relaxed">
+                        {card.desc}
+                      </p>
                     </div>
-                    <h4 className="text-base md:text-lg font-bold text-white mb-2 uppercase tracking-wide">
-                      {card.title}
-                    </h4>
-                    <p className="text-xs text-white/60 leading-relaxed">
-                      {card.desc}
-                    </p>
-                  </div>
 
-                  <span className="text-[9px] font-mono tracking-widest font-extrabold text-brand-pink uppercase block pt-4 mt-6 border-t border-white/5">
-                    Universal Admission Category
-                  </span>
+                    <span className="text-[9px] font-mono tracking-widest font-extrabold text-brand-pink uppercase block pt-4 mt-6 border-t border-white/5">
+                      Universal Admission Category
+                    </span>
+                  </motion.div>
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
       </div>
