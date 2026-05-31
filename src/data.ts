@@ -62,14 +62,14 @@ export const sponsors = [
 ];
 
 export const communityPartners: Array<{ name: string; logo?: string; link?: string }> = [
-  { name: "Chennai Data Circles", logo: "CHENNAIDATACIRCLES.jpeg", link: "https://www.linkedin.com/company/chennai-data-circles/" },
-  { name: "AI Geeks", logo: "AIGEEKS.png", link: "https://www.linkedin.com/company/ai-geeks/" },
-  { name: "Namma Flutter", logo: "NAMMAFLUTTER.jpeg", link: "https://www.linkedin.com/company/namma-flutter/" },
-  { name: "Azure Developer Community", logo: "AZURE.jpeg", link: "https://www.linkedin.com/company/azure-developer-community/" },
-  { name: "Chennai ReactJS", logo: "CHENNAIREACT.jpeg", link: "https://www.linkedin.com/company/chennai-reactjs/" },
-  { name: "Code-JVM", logo: "CODEONJVM.jpeg", link: "https://www.linkedin.com/company/code-jvm/" },
-  { name: "CodeSapiens", logo: "CODESAPIENS.jpeg", link: "https://www.linkedin.com/company/codesapiens/" },
-  { name: "W Tech Network", logo: "WTM.jpg", link: "https://www.linkedin.com/company/w-tech-network/" }
+  { name: "Chennai Data Circles", logo: "CHENNAIDATACIRCLES.jpeg", link: "https://www.linkedin.com/company/chennai-data-circle/" },
+  { name: "AI Geeks", logo: "AIGEEKS.png", link: "https://www.linkedin.com/company/ai-geeks-chennai/" },
+  { name: "Namma Flutter", logo: "NAMMAFLUTTER.jpeg", link: "https://www.linkedin.com/company/nammaflutter/" },
+  { name: "Azure Developer Community", logo: "AZURE.jpeg", link: "https://www.linkedin.com/company/azdevcommunity/" },
+  { name: "Chennai ReactJS", logo: "CHENNAIREACT.jpeg", link: "https://www.linkedin.com/company/chennaireact/" },
+  { name: "Code-JVM", logo: "CODEONJVM.jpeg", link: "https://www.linkedin.com/company/codeonjvmchennai/" },
+  { name: "CodeSapiens", logo: "CODESAPIENS.jpeg", link: "https://www.linkedin.com/company/codesapiens-community/" },
+  { name: "W Tech Network", logo: "WTM.jpg", link: "https://www.linkedin.com/company/womentechmakers/" }
 ];
 
 export const phasesData: PhaseItem[] = [
@@ -131,7 +131,7 @@ export const eligibilityCards = [
     glow: "rgba(141, 8, 190, 0.4)"
   },
   {
-    title: "Teams of 2 to 3 Members",
+    title: "Teams of 2 to 4 Members",
     desc: "Collaborate, challenge, and co-build. Form dynamic alliances of multi-disciplinary coders, system analysts, and UI designers.",
     icon: Zap,
     glow: "rgba(244, 114, 182, 0.4)"

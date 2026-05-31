@@ -81,7 +81,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="space-y-4"
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-pink/10 border border-brand-pink/30 rounded-full text-[10px] text-brand-pink font-extrabold font-mono uppercase tracking-widest animate-pulse">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-pink/10 border border-brand-pink/30 rounded-full text-[10px] text-purple-300 font-extrabold font-mono uppercase tracking-widest animate-pulse">
               <Sparkles className="h-3.5 w-3.5" />
               Final Registrations closing June 30, 2026
             </span>
@@ -102,7 +102,7 @@ export default function App() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left"
           >
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-brand-pink/15 border border-brand-pink/30 text-brand-pink">
+              <div className="p-2 rounded-lg bg-purple-400/15 border border-brand-pink/30 text-purple-400">
                 <Shield className="h-4 w-4" />
               </div>
               <div>
@@ -112,7 +112,7 @@ export default function App() {
             </div>
 
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-brand-pink/15 border border-brand-pink/30 text-brand-pink">
+              <div className="p-2 rounded-lg bg-brand-pink/15 border border-brand-pink/30 text-purple-400">
                 <BookOpen className="h-4 w-4" />
               </div>
               <div>
@@ -122,7 +122,7 @@ export default function App() {
             </div>
 
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-brand-pink/15 border border-brand-pink/30 text-brand-pink">
+              <div className="p-2 rounded-lg bg-brand-pink/15 border border-brand-pink/30 text-purple-400">
                 <Rocket className="h-4 w-4" />
               </div>
               <div>
@@ -151,13 +151,13 @@ export default function App() {
       </section>
 
       {/* 7. Footer Section */}
-      <footer className="bg-black py-16 border-t border-white/5 relative">
+      <footer className="bg-black py-8 border-t border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-4">
             <span className="text-xl font-bold tracking-widest text-white flex items-center gap-2 uppercase">
-              SheBuilds <span className="text-brand-pink font-mono">Chennai</span>
+              SheBuilds <span className="text-purple-400 font-mono">Chennai</span>
             </span>
             <p className="text-white/50 text-xs leading-relaxed max-w-sm">
               Supporting non-profitable initiatives to host national-level women-in-tech hackathons, empowering builders to create patents, research publications, and startups.
@@ -199,8 +199,15 @@ export default function App() {
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
+          <div className="lg:col-span-4 space-y-4 w-full">
+              <img
+                 src="/src/assets/images/design2.png"
+                 alt="VR girl"
+                 className="max-w-none w-[600px] h-auto mx-auto -ml-29"
+              >
+              </img>
+            </div>
+          {/* Quick Links 
           <div className="lg:col-span-4 grid grid-cols-2 gap-8">
             <div>
               <h4 className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-4 font-bold">Navigation</h4>
@@ -221,22 +228,19 @@ export default function App() {
               </ul>
             </div>
           </div>
+          */}
 
           {/* Network description */}
-          <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-[10px] uppercase font-mono tracking-widest text-white/40 font-bold">Global Presence</h4>
-            <p className="text-xs text-white/70 leading-relaxed">
-              <strong>India's fastest-growing female technical support pipeline.</strong> Build certified web solutions, participate in real-time engineering sprints, and drive intellectual property creation.
-            </p>
+          <div className="lg:col-span-4 space-y-4" >
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
-              <span className="text-xs text-brand-pink uppercase tracking-widest font-mono font-bold animate-pulse">Registrations Deadline:</span>
+              <span className="text-xs text-purple-300 uppercase tracking-widest font-mono font-bold animate-pulse">Registrations Deadline:</span>
               <span className="text-xs font-bold text-white uppercase font-mono">June 30, 2026</span>
             </div>
             <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-              <h4 className="text-[10px] uppercase font-mono tracking-widest text-white/40 font-bold">Web Development Team</h4>
+              <h4 className="text-[10px] uppercase font-mono tracking-widest text-amber-700 font-bold">Web Development Team</h4>
               <div className="space-y-1 text-xs leading-relaxed">
                 <a
-                  href="https://www.linkedin.com/search/results/all/?keywords=Keerthana%20MG"
+                  href="https://www.linkedin.com/in/keerthana-m-g-12ba59256/"
                   target="_blank"
                   rel="noreferrer"
                   className="block text-white/70 hover:text-brand-pink transition-colors"
@@ -244,7 +248,7 @@ export default function App() {
                   Keerthana MG
                 </a>
                 <a
-                  href="https://www.linkedin.com/search/results/all/?keywords=Sherin%20Katherina%20D"
+                  href="https://www.linkedin.com/in/sherin-katherina-d/"
                   target="_blank"
                   rel="noreferrer"
                   className="block text-white/70 hover:text-brand-pink transition-colors"
@@ -252,7 +256,7 @@ export default function App() {
                   Sherin Katherina D
                 </a>
                 <a
-                  href="https://www.linkedin.com/search/results/all/?keywords=Darsshini%20P"
+                  href="https://www.linkedin.com/in/darsshini-punniakotti-050172316/"
                   target="_blank"
                   rel="noreferrer"
                   className="block text-white/70 hover:text-brand-pink transition-colors"
@@ -260,7 +264,7 @@ export default function App() {
                   Darsshini P
                 </a>
                 <a
-                  href="https://www.linkedin.com/search/results/all/?keywords=Gurunethra"
+                  href="https://www.linkedin.com/in/gurunethra-k-a407a8394/"
                   target="_blank"
                   rel="noreferrer"
                   className="block text-white/70 hover:text-brand-pink transition-colors"
@@ -274,7 +278,7 @@ export default function App() {
         </div>
 
         {/* Brand acknowledgement rail */}
-        <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
+        <div className="col-span-full text-center max-w-7xl mx-auto px-2 mt-12 pt-2 border-t border-white/5 flex flex-col  items-center  gap-4 text-xs text-white/40">
           <span>
             © 2026 SheBuilds Chennai. Crafted in close collaboration with Intellexa REC. All Rights Reserved.
           </span>

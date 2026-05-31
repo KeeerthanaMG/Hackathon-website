@@ -148,7 +148,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
                 <span className="text-sm font-extrabold uppercase tracking-widest text-white">
                   SheBuilds
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-brand-pink font-bold">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-purple-400 font-bold">
                   Chennai
                 </span>
               </div>
@@ -213,17 +213,17 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           className="flex flex-col items-center"
         >
           {/* Neon Pink Glowing Badge */}
-          <span className="text-xs uppercase tracking-[0.30em] text-brand-pink font-extrabold neon-text-pink px-4 py-2 border border-brand-pink/30 rounded-full bg-brand-pink/10 inline-block mb-6 shadow-md backdrop-blur-md">
+          <span className="text-xs uppercase tracking-[0.30em] text-purple-400 font-extrabold neon-text-pink px-4 py-2 border border-brand-pink/30 rounded-full bg-brand-pink/10 inline-block mb-6 shadow-md backdrop-blur-md">
             Shebuilds Chennai Presents
           </span>
 
           {/* Majestic Heading built with Instrument Serif */}
           <h1
             style={{ fontFamily: "'Instrument Serif', serif" }}
-            className="text-6xl md:text-8xl lg:text-9xl text-white mb-2 tracking-tight select-none italic font-light font-serif leading-none"
+            className="text-4xl md:text-7xl lg:text-8xl text-white mb-2 tracking-tight select-none italic font-serif leading-none"
             id="hero-heading"
           >
-            Code & Challenge 3.0
+             SheBuilds Chennai Hack
           </h1>
 
           {/* Localized descriptor lines */}
@@ -252,7 +252,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
               onClick={onRegisterClick}
               className="relative px-8 py-3 bg-white text-black hover:bg-brand-pink hover:text-white rounded-full text-xs uppercase tracking-widest font-extrabold transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-pink cursor-pointer active:scale-95"
             >
-              Register on Unstop
+              Register 
             </button>
             <button
               onClick={onExploreClick}

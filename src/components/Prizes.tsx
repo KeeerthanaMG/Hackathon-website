@@ -9,7 +9,7 @@ interface PrizesProps {
 
 export default function Prizes({ onRegisterClick }: PrizesProps) {
   return (
-    <section id="prizes" className="pt-20 pb-12 bg-black border-t border-white/5 relative overflow-hidden">
+    <section id="prizes" className="pt-3 pb-12 bg-black border-t border-white/5 relative overflow-hidden">
       {/* Background glow of vivid neon pink */}
       <div className="absolute right-0 bottom-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full filter blur-[150px] pointer-events-none" />
 
@@ -23,7 +23,7 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mb-16"
         >
-          <span className="text-xs uppercase tracking-[0.25em] text-brand-pink font-extrabold border border-brand-pink/20 bg-brand-pink/5 rounded-full px-4 py-1.5 inline-block mb-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-purple-400 font-extrabold border border-brand-pink/20 bg-brand-pink/5 rounded-full px-4 py-1.5 inline-block mb-3">
             Grand Rewards
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
@@ -51,7 +51,7 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <Coins className="h-5 w-5 text-brand-pink animate-pulse" />
-                <span className="text-[10px] uppercase font-mono tracking-widest text-brand-pink font-bold">Hackathon Pool</span>
+                <span className="text-[10px] uppercase font-mono tracking-widest text-purple-400 font-bold">Hackathon Pool</span>
               </div>
               
               <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-3">
@@ -106,11 +106,11 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
                     >
                       <div>
                         {/* Glowing badge */}
-                        <div className="inline-block px-2.5 py-1 bg-brand-pink/10 border border-brand-pink/30 rounded-md text-[9px] uppercase font-mono font-bold text-brand-pink mb-4">
+                        <div className="inline-block px-2.5 py-1 bg-brand-pink/10 border border-brand-pink/30 rounded-md text-[9px] uppercase font-mono font-bold text-purple-400 mb-4">
                           {perk.badge}
                         </div>
                         
-                        <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-brand-pink group-hover:scale-105 transition-transform">
+                        <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-105 transition-transform">
                           <IconComp className="h-5 w-5" />
                         </div>
                         
@@ -123,7 +123,7 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
                         </p>
                       </div>
 
-                      <div className="pt-3 border-t border-white/5 text-[9px] font-mono uppercase tracking-widest text-brand-pink font-extrabold mt-3">
+                      <div className="pt-3 border-t border-white/5 text-[9px] font-mono uppercase tracking-widest text-purple-400 font-extrabold mt-3">
                         {perk.incentive}
                       </div>
                     </motion.div>

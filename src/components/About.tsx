@@ -186,7 +186,7 @@ export default function About({ onRegisterClick }: AboutProps) {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-pink/10 border border-brand-pink/30 rounded-full mb-3">
             <span className="h-1.5 w-1.5 bg-brand-pink rounded-full animate-ping"></span>
-            <span className="text-[10px] uppercase tracking-widest text-brand-pink font-extrabold font-mono">National Initiative</span>
+            <span className="text-[10px] uppercase tracking-widest text-purple-400 font-extrabold font-mono">National Initiative</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-none">
             Where <span className="text-gradient-pink font-bold">Women Innovators</span> Code the Future.
@@ -208,11 +208,11 @@ export default function About({ onRegisterClick }: AboutProps) {
             className="lg:col-span-7 liquid-glass rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:border-brand-pink/30 transition-all duration-300 group neon-glow-pink border border-white/5"
           >
             <div>
-              <div className="h-12 w-12 rounded-2xl bg-brand-pink/15 flex items-center justify-center mb-6 border border-brand-pink/30 shadow-md">
-                <Users className="h-6 w-6 text-brand-pink" />
+              <div >
+               
               </div>
               <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
-                SheBuilds Chennai Cohort
+                About SheBuilds 
               </h3>
               <p className="text-white/70 text-sm md:text-base leading-relaxed mb-6">
                 We are a community-driven organization bridging the gap between talent and real industrial opportunities. By offering advanced code sandboxes, continuous webinars, hackathons, and global mentorship chains, we support women software engineers, designers, and project managers in achieving real career impact.
@@ -280,7 +280,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                 </p>
               </div>
 
-              <div className="text-[10px] uppercase font-mono tracking-widest text-brand-pink mt-4 font-bold flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-300">
+              <div className="text-[10px] uppercase font-mono tracking-widest text-purple-400 mt-4 font-bold flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-300">
                 Join our supportive tech circle <ArrowRight className="h-3 w-3" />
               </div>
             </div>
@@ -292,13 +292,17 @@ export default function About({ onRegisterClick }: AboutProps) {
         <div>
           {/* Decorative overlay removed per request to reduce background blur */}
 
-          <div className="relative z-10 max-w-7xl mx-auto mb-24">
-            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-brand-pink/20 border border-brand-pink/40 text-[9px] text-white uppercase font-extrabold tracking-widest font-mono mb-6">
-              <Award className="h-3.5 w-3.5 text-brand-pink" />
+          <div className="text-center max-w-2xl mx-auto mb-14 animate-fadeIn ">
+
+         
+            <span className="text-xs uppercase tracking-[0.25em] text-purple-400 font-extrabold border border-brand-pink/20 bg-brand-pink/5 rounded-full px-4 py-3 inline-block mb-3 animate-pulse">
               Official Hosting & Event Partners
             </span>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+            Our  <span className="text-gradient-pink font-extrabold text-shadow">Official Partners</span>
+           </h2>
+           
+            <div className=" py-5 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -389,7 +393,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                       </p>
                     </div>
 
-                    <span className="text-[9px] font-mono tracking-widest font-extrabold text-brand-pink uppercase block pt-4 mt-6 border-t border-white/5">
+                    <span className="text-[9px] font-mono tracking-widest font-extrabold text-purple-400 uppercase block pt-4 mt-6 border-t border-white/5">
                       Universal Admission Category
                     </span>
                   </div>
