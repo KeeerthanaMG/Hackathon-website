@@ -61,15 +61,15 @@ export const sponsors = [
   { name: "Yuniq", logoPlaceholder: "Yuniq", role: "Collaborative developer sponsor", tier: "sponsor" }
 ];
 
-export const communityPartners = [
-  { name: "Data Circle" },
-  { name: "AI Geeks" },
-  { name: "Namma Flutter" },
-  { name: "W Tech Network" },
-  { name: "Chennai ReactJS" },
-  { name: "Code-JVM" },
-  { name: "CodeSapiens" },
-  { name: "Azure Developer Community" }
+export const communityPartners: Array<{ name: string; logo?: string; link?: string }> = [
+  { name: "Chennai Data Circles", logo: "CHENNAIDATACIRCLES.jpeg", link: "https://www.linkedin.com/company/chennai-data-circles/" },
+  { name: "AI Geeks", logo: "AIGEEKS.png", link: "https://www.linkedin.com/company/ai-geeks/" },
+  { name: "Namma Flutter", logo: "NAMMAFLUTTER.jpeg", link: "https://www.linkedin.com/company/namma-flutter/" },
+  { name: "Azure Developer Community", logo: "AZURE.jpeg", link: "https://www.linkedin.com/company/azure-developer-community/" },
+  { name: "Chennai ReactJS", logo: "CHENNAIREACT.jpeg", link: "https://www.linkedin.com/company/chennai-reactjs/" },
+  { name: "Code-JVM", logo: "CODEONJVM.jpeg", link: "https://www.linkedin.com/company/code-jvm/" },
+  { name: "CodeSapiens", logo: "CODESAPIENS.jpeg", link: "https://www.linkedin.com/company/codesapiens/" },
+  { name: "W Tech Network", logo: "WTM.jpg", link: "https://www.linkedin.com/company/w-tech-network/" }
 ];
 
 export const phasesData: PhaseItem[] = [

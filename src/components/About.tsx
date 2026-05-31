@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 import { Building2, Award, ArrowRight, ShieldCheck, Users, Zap, UserCheck, Code, Sparkles, Binary } from 'lucide-react';
 import { eligibilityCards } from '../data';
 
@@ -11,12 +11,13 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.25, // falls one by one (first, then next, then third)
+      // No staggering so all cards animate together when the section becomes visible
+      staggerChildren: 0,
     }
   },
   exit: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0,
       staggerDirection: -1
     }
   }
@@ -25,7 +26,7 @@ const containerVariants = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: -250, // start far above
+    y: -20,
     transition: {
       duration: 0
     }
@@ -35,61 +36,131 @@ const cardVariants = {
     y: 0,
     transition: {
       type: "tween",
-      ease: [0.25, 1, 0.5, 1], // easeOutQuart (smooth deceleration)
-      duration: 1.0 // slide down in 1.0s
+      ease: [0.22, 1, 0.36, 1],
+      duration: 0.6
     }
   },
   exit: {
     opacity: 0,
-    y: 200, // continues moving downward before disappearing
+    y: 20,
     transition: {
       type: "tween",
-      ease: [0.25, 1, 0.5, 1],
-      duration: 1.0, // exit slide down in 1.0s
-      delay: 0.1 // starts shortly after text begins to fade
+      ease: [0.22, 1, 0.36, 1],
+      duration: 0.45
     }
   }
 };
 
-const contentVariants = {
-  hidden: {
-    opacity: 0,
-    transition: {
-      duration: 0
-    }
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      type: "tween",
-      ease: "easeOut",
-      delay: 0.35, // starts during the drop
-      duration: 0.65 // fades in smoothly to finish exactly with the card settling
-    }
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      type: "tween",
-      ease: "easeIn",
-      duration: 0.3 // text fades out first
-    }
-  }
-};
 
 
 export default function About({ onRegisterClick }: AboutProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.15 });
   const [animationState, setAnimationState] = useState<"hidden" | "visible" | "exit">("hidden");
+  const [hasCountAnimated, setHasCountAnimated] = useState(false);
+  const [sectionVisible, setSectionVisible] = useState(false);
+
+  const [membersCount, setMembersCount] = useState(0);
+  const [eventsCount, setEventsCount] = useState(0);
+  const [mentorsCount, setMentorsCount] = useState(0);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  // Dynamically import all image files from the assets folder so any images
+  // you add to `src/assets/images/` are picked up automatically.
+  // Exclude the logo file so it doesn't appear in the slideshow.
+  // Vite's import.meta.glob with `as: 'url'` returns mapped URLs (eagerly).
+  const imagesMap = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg,webp}', { eager: true, as: 'url' }) as Record<string, string>;
+  const allowedPhotoNames = [
+    'photo_1.jpeg',
+    'photo_2.jpeg',
+    'photo_3.jpeg',
+    'photo_4.jpeg',
+    'photo_5.jpeg',
+    'photo_6.jpeg',
+    'photo_7.jpeg',
+    'photo_8.jpeg',
+    'photo_9.jpeg',
+    'photo_10.jpeg',
+    'photo_11.jpeg',
+    'photo_12.jpeg',
+  ];
+
+  const eventPhotos = Object.entries(imagesMap || {})
+    .filter(([filePath]) =>
+      allowedPhotoNames.some((name) => filePath.endsWith(name))
+    )
+    .map(([, url]) => url);
+
+  // Fallback to a single placeholder if no images found
+  if (eventPhotos.length === 0) {
+    eventPhotos.push('/src/assets/images/women_tech_3d_1779992842675.png');
+  }
+
+  // Observe the section and toggle visibility; do not disconnect so we can
+  // animate both on enter and on leave (reveal-and-dismiss behavior).
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setSectionVisible(entry.isIntersecting);
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  // Drive the motion animation state from section visibility
+  useEffect(() => {
+    setAnimationState(sectionVisible ? "visible" : "exit");
+  }, [sectionVisible]);
 
   useEffect(() => {
-    if (isInView) {
-      setAnimationState("visible");
-    } else {
-      setAnimationState("exit");
-    }
-  }, [isInView]);
+    if (!sectionVisible || hasCountAnimated) return;
+
+    const animateValue = (target: number, setter: React.Dispatch<React.SetStateAction<number>>, duration = 1400) => {
+      const start = 0;
+      const interval = 30;
+      const steps = Math.ceil(duration / interval);
+      const increment = Math.max(1, Math.ceil((target - start) / steps));
+      let current = start;
+
+      const timer = window.setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          setter(target);
+          window.clearInterval(timer);
+          return;
+        }
+        setter(current);
+      }, interval);
+
+      return () => window.clearInterval(timer);
+    };
+
+    const clearMembers = animateValue(1200, setMembersCount);
+    const clearEvents = animateValue(500, setEventsCount);
+    const clearMentors = animateValue(70, setMentorsCount);
+    setHasCountAnimated(true);
+
+    return () => {
+      clearMembers();
+      clearEvents();
+      clearMentors();
+    };
+  }, [sectionVisible, hasCountAnimated]);
+
+  useEffect(() => {
+    if (eventPhotos.length < 2) return;
+
+    const slideDurationMs = 4000;
+    const slideTimer = window.setInterval(() => {
+      setPhotoIndex((current) => (current + 1) % eventPhotos.length);
+    }, slideDurationMs);
+
+    return () => window.clearInterval(slideTimer);
+  }, [eventPhotos.length]);
 
   const handleAnimationComplete = (definition: any) => {
     if (definition === "exit") {
@@ -98,7 +169,7 @@ export default function About({ onRegisterClick }: AboutProps) {
   };
 
   return (
-    <section id="about" className="py-28 bg-black border-t border-white/5 relative overflow-hidden">
+    <section ref={containerRef} id="about" className="py-20 bg-black border-t border-white/5 relative overflow-hidden">
       {/* Background glow of vivid neon pink */}
       <div className="absolute right-0 top-1/4 w-[450px] h-[450px] bg-brand-pink/10 rounded-full filter blur-[140px] pointer-events-none" />
       <div className="absolute left-10 bottom-10 w-[350px] h-[350px] bg-brand-pink/5 rounded-full filter blur-[120px] pointer-events-none" />
@@ -149,16 +220,16 @@ export default function About({ onRegisterClick }: AboutProps) {
             </div>
             
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 mt-6">
-              <div>
-                <span className="block text-2xl md:text-3xl font-extrabold text-white tracking-tight">12,000+</span>
+              <div className="group">
+                <span className="block text-2xl md:text-3xl font-extrabold tracking-tight transition-transform duration-300 transform group-hover:scale-105 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-indigo-600">12000+</span>
                 <span className="text-[10px] text-white/50 uppercase tracking-widest font-mono">Members</span>
               </div>
-              <div>
-                <span className="block text-2xl md:text-3xl font-extrabold text-white tracking-tight">500+</span>
+              <div className="group">
+                <span className="block text-2xl md:text-3xl font-extrabold tracking-tight transition-transform duration-300 transform group-hover:scale-105 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-indigo-600">500+</span>
                 <span className="text-[10px] text-white/50 uppercase tracking-widest font-mono">Events</span>
               </div>
-              <div>
-                <span className="block text-2xl md:text-3xl font-extrabold text-white tracking-tight">70+</span>
+              <div className="group">
+                <span className="block text-2xl md:text-3xl font-extrabold tracking-tight transition-transform duration-300 transform group-hover:scale-105 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-indigo-600">70+</span>
                 <span className="text-[10px] text-white/50 uppercase tracking-widest font-mono">Mentors</span>
               </div>
             </div>
@@ -183,26 +254,29 @@ export default function About({ onRegisterClick }: AboutProps) {
             {/* Glowing ring borders behind the picture */}
             <div className="absolute -inset-1 bg-gradient-to-t from-brand-pink to-transparent opacity-10 blur-xl group-hover:opacity-30 transition-all duration-500" />
 
-            {/* High-fidelity generated image with zoom hover transition */}
-            <div className="relative w-full h-[280px] overflow-hidden">
-              <img
-                src="/src/assets/images/women_tech_3d_1779992842675.png"
-                alt="3D India Female Developer representation"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent pointer-events-none" />
-            </div>
+              {/* Shattering the Glass Ceiling image slideshow */}
+              <div className="relative w-full h-[280px] overflow-hidden">
+                {eventPhotos.map((photo, index) => (
+                  <img
+                    key={`${photo}-${index}`}
+                    src={photo}
+                    alt={`SheBuilds Chennai event ${index + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === photoIndex ? 'opacity-100' : 'opacity-0'}`}
+                    referrerPolicy="no-referrer"
+                  />
+                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent pointer-events-none" />
+              </div>
 
-            {/* Bottom Caption Container */}
-            <div className="p-6 bg-black/40 backdrop-blur-md border-t border-white/5 relative z-10 flex-1 flex flex-col justify-between">
+              {/* Bottom Caption Container */}
+              <div className="p-6 bg-black/40 backdrop-blur-md border-t border-white/5 relative z-10 flex-1 flex flex-col justify-between">
               <div>
                 <h4 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
                   <Binary className="h-4.5 w-4.5 text-brand-pink animate-pulse" />
-                  Shattering the Glass Ceiling
+                  Our Past Events
                 </h4>
                 <p className="text-xs text-white/60 leading-relaxed mt-2">
-                  Fueling creative female minds globally. We don't just write code; we cultivate tomorrow's founders, patent creators, and tech innovators.
+                  A glimpse into our vibrant community — highlights from past editions, workshops, and meetups.
                 </p>
               </div>
 
@@ -215,39 +289,60 @@ export default function About({ onRegisterClick }: AboutProps) {
         </div>
 
         {/* Co-Organizers Gratitude Frame (Intellexa REC and Rajalakshmi Engineering College) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="liquid-glass rounded-3xl p-8 md:p-10 bg-gradient-to-br from-brand-pink/15 via-black/90 to-black hover:border-brand-pink/40 border border-brand-pink/20 transition-all duration-300 relative overflow-hidden mb-20 neon-glow-pink"
-        >
-          <div className="absolute top-0 right-0 p-8 text-brand-pink/5 pointer-events-none">
-            <Building2 className="w-56 h-56 transform translate-x-12 -translate-y-12" />
-          </div>
+        <div>
+          {/* Decorative overlay removed per request to reduce background blur */}
 
-          <div className="relative z-10 max-w-3xl">
-            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-brand-pink/20 border border-brand-pink/40 text-[9px] text-white uppercase font-extrabold tracking-widest font-mono mb-4">
+          <div className="relative z-10 max-w-7xl mx-auto mb-24">
+            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-brand-pink/20 border border-brand-pink/40 text-[9px] text-white uppercase font-extrabold tracking-widest font-mono mb-6">
               <Award className="h-3.5 w-3.5 text-brand-pink" />
               Official Hosting & Event Partners
             </span>
 
-            <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3 tracking-tight">
-              Organized with Gratitude alongside <span className="text-brand-pink">Intellexa REC</span>
-            </h3>
-            
-            <p className="text-white/70 text-sm md:text-base leading-relaxed mb-6">
-              This landmark third edition is brought to life through a close partnership between SheBuilds Chennai and <strong>Intellexa REC</strong>, the supreme technical club of <strong>Rajalakshmi Engineering College (REC)</strong>. Rajalakshmi Engineering College acts proudly as our <strong>Official Hosting Partner</strong>, lending their campus, development labs, and support systems to give our hackers a dream in-person hacking venue.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[260px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
+              >
+                <a
+                  href="https://www.linkedin.com/school/rajalakshmi-engineering-college/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full h-full text-inherit"
+                >
+                  <h4 className="text-sm font-semibold text-white mb-3 tracking-wide uppercase font-mono">Official Hosting Partner</h4>
+                  <div className="h-[180px] w-full flex items-center justify-center rounded-md">
+                    {/* Place your REC logo at src/assets/images/rec_logo.png */}
+                    <img src="/src/assets/images/rec_logo.png" alt="REC logo placeholder" className="max-h-[300px] object-contain" />
+                  </div>
+                </a>
+              </motion.div>
 
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4 border-t border-white/10 text-xs">
-              <span className="text-white/40 font-mono">OFFICIAL CAMPUS HOSTS:</span>
-              <span className="font-extrabold tracking-widest text-white uppercase bg-white/5 border border-white/10 rounded-lg py-1 px-3">
-                Rajalakshmi Engineering College, Chennai
-              </span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[260px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
+              >
+                <a
+                  href="https://www.linkedin.com/company/intellexa-rec/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full h-full text-inherit"
+                >
+                  <h4 className="text-sm font-semibold text-white mb-3 tracking-wide uppercase font-mono">Event & Technology Partner</h4>
+                  <div className="h-[180px] w-full flex items-center justify-center rounded-md">
+                    {/* Place your Intellexa logo at src/assets/images/intellexa_logo.png */}
+                    <img src="/src/assets/images/intellexa_logo.png" alt="Intellexa logo placeholder" className="max-h-[280px] object-contain" />
+                  </div>
+                </a>
+              </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Restructured Who Can Participate Section - Elevated and Highly Visual */}
         <div>
@@ -261,7 +356,6 @@ export default function About({ onRegisterClick }: AboutProps) {
           </div>
 
           <motion.div 
-            ref={containerRef}
             variants={containerVariants}
             animate={animationState}
             initial="hidden"
@@ -273,15 +367,15 @@ export default function About({ onRegisterClick }: AboutProps) {
               return (
                 <motion.div
                   key={idx}
-                  variants={cardVariants}
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
                   style={{ boxShadow: `0 10px 30px -15px ${card.glow}` }}
                   className="liquid-glass rounded-2xl p-6 hover:border-brand-pink/40 transition-colors duration-300 relative group flex flex-col justify-between"
                 >
-                  <motion.div
-                    variants={contentVariants}
-                    className="w-full h-full flex flex-col justify-between"
-                  >
+                  <div className="w-full h-full flex flex-col justify-between">
                     <div>
                       {/* Glowing neon background inside card */}
                       <div className="h-10 w-10 rounded-xl bg-brand-pink/10 border border-brand-pink/30 flex items-center justify-center mb-5 text-brand-pink group-hover:scale-110 transition-transform duration-300">
@@ -298,7 +392,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                     <span className="text-[9px] font-mono tracking-widest font-extrabold text-brand-pink uppercase block pt-4 mt-6 border-t border-white/5">
                       Universal Admission Category
                     </span>
-                  </motion.div>
+                  </div>
                 </motion.div>
               );
             })}

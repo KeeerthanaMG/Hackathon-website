@@ -137,48 +137,49 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
         >
           {/* Logo Area: SheBuilds Chennai Custom Vector Badge */}
           <div className="flex items-center gap-6">
-            <a href="#" className="flex items-center gap-2 group focus:outline-none" id="nav-logo">
-              {/* Custom SVG glowing logo representing shebuilds */}
-              <div className="relative flex items-center justify-center p-2 rounded-xl bg-brand-pink/20 border border-brand-pink/30 group-hover:scale-110 transition-transform duration-300">
-                <Code2 className="h-5 w-5 text-brand-pink" />
-                <span className="absolute -inset-1 rounded-xl bg-brand-pink/30 filter blur-sm opacity-50 animate-pulse" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-sm md:text-base text-white tracking-widest uppercase">
+            <a href="#" className="flex items-center gap-3 focus:outline-none" id="nav-logo">
+              <img
+                src="/src/assets/images/shebuilds_chennai_logo.png"
+                alt="SheBuilds Chennai logo"
+                className="h-[60px] w-auto rounded-2xl border border-white/10 object-contain shadow-sm"
+                referrerPolicy="no-referrer"
+              />
+              <div className="hidden md:flex flex-col text-left">
+                <span className="text-sm font-extrabold uppercase tracking-widest text-white">
                   SheBuilds
                 </span>
-                <span className="text-[9px] text-brand-pink font-bold tracking-widest uppercase -mt-1 font-mono">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-brand-pink font-bold">
                   Chennai
                 </span>
               </div>
             </a>
 
             {/* Nav Links based strictly on custom sections */}
-            <nav className="hidden md:flex items-center gap-8 ml-4">
+            <nav className="hidden md:flex items-center gap-8 ml-4 self-center">
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold focus:outline-none"
+                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-about"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('phases')}
-                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold focus:outline-none"
+                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-roadmap"
               >
                 Phases & Dates
               </button>
               <button
                 onClick={() => scrollToSection('prizes')}
-                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold focus:outline-none"
+                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-perks"
               >
                 Perks & Prizes
               </button>
               <button
                 onClick={() => scrollToSection('sponsors')}
-                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold focus:outline-none"
+                className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-partners"
               >
                 Partners
@@ -186,22 +187,19 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
             </nav>
           </div>
 
-          {/* Right Side buttons */}
-          <div className="flex items-center gap-4">
-            <button
+          {/* Right Side button */}
+          <div className="flex items-center">
+            <motion.button
               onClick={onRegisterClick}
-              className="text-white/70 hover:text-white text-xs uppercase tracking-widest font-bold py-1 px-3 transition-colors focus:outline-none focus:ring-1 focus:ring-brand-pink"
-              id="btn-nav-signup"
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+              animate={{ y: [0, -3, 0] }}
+              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+              className="liquid-glass border border-white/10 bg-brand-pink/80 hover:bg-brand-pink/100 transition-all text-white rounded-full px-10 py-3 text-sm uppercase tracking-[0.25em] font-extrabold min-w-[220px] text-center focus:outline-none focus:ring-2 focus:ring-brand-pink shadow-xl shadow-brand-pink/20"
+              id="btn-nav-register"
             >
-              Sign Up
-            </button>
-            <button
-              onClick={onRegisterClick}
-              className="liquid-glass border border-white/10 hover:border-brand-pink/50 hover:bg-brand-pink/10 hover:shadow-lg transition-all text-white rounded-full px-5 py-2 text-xs uppercase tracking-widest font-extrabold focus:outline-none focus:ring-2 focus:ring-brand-pink duration-300"
-              id="btn-nav-login"
-            >
-              Login
-            </button>
+              Register
+            </motion.button>
           </div>
         </motion.div>
       </header>
@@ -215,7 +213,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           className="flex flex-col items-center"
         >
           {/* Neon Pink Glowing Badge */}
-          <span className="text-xs uppercase tracking-[0.25em] text-brand-pink font-extrabold neon-text-pink px-4 py-2 border border-brand-pink/30 rounded-full bg-brand-pink/10 inline-block mb-6 shadow-md backdrop-blur-md">
+          <span className="text-xs uppercase tracking-[0.30em] text-brand-pink font-extrabold neon-text-pink px-4 py-2 border border-brand-pink/30 rounded-full bg-brand-pink/10 inline-block mb-6 shadow-md backdrop-blur-md">
             Shebuilds Chennai Presents
           </span>
 
@@ -230,7 +228,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
 
           {/* Localized descriptor lines */}
           <p className="text-white/40 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold mb-10 max-w-2xl px-4 font-mono">
-            Empowering Female Developers • 24-Hour Offline Grand Finale • Chennai
+            Empowering Female Developers • 24-Hour Offline Grand Finale • Chennai • 1st and 2nd August 2026 
           </p>
         </motion.div>
 
@@ -249,7 +247,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           </p>
 
           {/* Action buttons with subtle glows */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 pt-2">
             <button
               onClick={onRegisterClick}
               className="relative px-8 py-3 bg-white text-black hover:bg-brand-pink hover:text-white rounded-full text-xs uppercase tracking-widest font-extrabold transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-pink cursor-pointer active:scale-95"
@@ -269,8 +267,8 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
       </main>
 
       {/* Hero Footer */}
-      <footer className="relative z-10 flex flex-col items-center gap-4 pb-12">
-        <div className="flex justify-center gap-4">
+      <footer className="relative z-10 flex flex-col items-center gap-2 pb-6">
+        <div className="flex justify-center gap-2">
           <a
             href="https://instagram.com/shebuilds_chennai"
             target="_blank"
@@ -293,9 +291,6 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           </a>
         </div>
 
-        <span className="text-[9px] text-white/30 uppercase tracking-[0.25em] font-mono pointer-events-none select-none">
-          Ambient cinematic template • custom loop fade system
-        </span>
       </footer>
     </div>
   );

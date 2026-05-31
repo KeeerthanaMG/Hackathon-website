@@ -9,7 +9,7 @@ interface PrizesProps {
 
 export default function Prizes({ onRegisterClick }: PrizesProps) {
   return (
-    <section id="prizes" className="py-24 bg-black border-t border-white/5 relative overflow-hidden">
+    <section id="prizes" className="pt-20 pb-12 bg-black border-t border-white/5 relative overflow-hidden">
       {/* Background glow of vivid neon pink */}
       <div className="absolute right-0 bottom-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full filter blur-[150px] pointer-events-none" />
 

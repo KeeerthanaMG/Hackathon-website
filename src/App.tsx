@@ -232,6 +232,43 @@ export default function App() {
               <span className="text-xs text-brand-pink uppercase tracking-widest font-mono font-bold animate-pulse">Registrations Deadline:</span>
               <span className="text-xs font-bold text-white uppercase font-mono">June 30, 2026</span>
             </div>
+            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+              <h4 className="text-[10px] uppercase font-mono tracking-widest text-white/40 font-bold">Web Development Team</h4>
+              <div className="space-y-1 text-xs leading-relaxed">
+                <a
+                  href="https://www.linkedin.com/search/results/all/?keywords=Keerthana%20MG"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-white/70 hover:text-brand-pink transition-colors"
+                >
+                  Keerthana MG
+                </a>
+                <a
+                  href="https://www.linkedin.com/search/results/all/?keywords=Sherin%20Katherina%20D"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-white/70 hover:text-brand-pink transition-colors"
+                >
+                  Sherin Katherina D
+                </a>
+                <a
+                  href="https://www.linkedin.com/search/results/all/?keywords=Darsshini%20P"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-white/70 hover:text-brand-pink transition-colors"
+                >
+                  Darsshini P
+                </a>
+                <a
+                  href="https://www.linkedin.com/search/results/all/?keywords=Gurunethra"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-white/70 hover:text-brand-pink transition-colors"
+                >
+                  Gurunethra K
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
