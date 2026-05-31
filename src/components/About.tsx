@@ -308,7 +308,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[260px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
+                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[220px] max-w-[520px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
               >
                 <a
                   href="https://www.linkedin.com/school/rajalakshmi-engineering-college/"
@@ -317,9 +317,9 @@ export default function About({ onRegisterClick }: AboutProps) {
                   className="block w-full h-full text-inherit"
                 >
                   <h4 className="text-sm font-semibold text-white mb-3 tracking-wide uppercase font-mono">Official Hosting Partner</h4>
-                  <div className="h-[180px] w-full flex items-center justify-center rounded-md">
+                  <div className="h-[160px] w-full max-w-[320px] flex items-center justify-center rounded-md mx-auto">
                     {/* Place your REC logo at src/assets/images/rec_logo.png */}
-                    <img src="/src/assets/images/rec_logo.png" alt="REC logo placeholder" className="max-h-[300px] object-contain" />
+                    <img src="/src/assets/images/rec_logo.png" alt="REC logo placeholder" className="max-h-[200px] object-contain" />
                   </div>
                 </a>
               </motion.div>
@@ -329,7 +329,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[260px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
+                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[220px] max-w-[520px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
               >
                 <a
                   href="https://www.linkedin.com/company/intellexa-rec/"
@@ -338,9 +338,9 @@ export default function About({ onRegisterClick }: AboutProps) {
                   className="block w-full h-full text-inherit"
                 >
                   <h4 className="text-sm font-semibold text-white mb-3 tracking-wide uppercase font-mono">Event & Technology Partner</h4>
-                  <div className="h-[180px] w-full flex items-center justify-center rounded-md">
+                  <div className="h-[200px] w-full max-w-[320px] flex items-center justify-center rounded-md mx-auto">
                     {/* Place your Intellexa logo at src/assets/images/intellexa_logo.png */}
-                    <img src="/src/assets/images/intellexa_logo.png" alt="Intellexa logo placeholder" className="max-h-[280px] object-contain" />
+                    <img src="/src/assets/images/intellexa_logo.png" alt="Intellexa logo placeholder" className="max-h-[260px] object-contain" />
                   </div>
                 </a>
               </motion.div>

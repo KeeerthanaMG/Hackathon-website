@@ -5,22 +5,22 @@ import About from './components/About';
 import Phases from './components/Phases';
 import Prizes from './components/Prizes';
 import Sponsors from './components/Sponsors';
-import { 
-  X, 
-  ArrowUpRight, 
-  Mail, 
-  Globe, 
-  Linkedin, 
-  Instagram, 
-  ChevronUp, 
-  Check, 
+import {
+  X,
+  ArrowUpRight,
+  Mail,
+  Globe,
+  Linkedin,
+  Instagram,
+  ChevronUp,
+  Check,
   Info,
   Calendar,
   Users,
   Sparkles,
   Rocket,
   Shield,
-  BookOpen
+  BookOpen,
 } from 'lucide-react';
 
 export default function App() {
@@ -38,7 +38,6 @@ export default function App() {
   };
 
   const handleUnstopRedirect = () => {
-    // Elegant redirect to Unstop
     window.open('https://unstop.com', '_blank', 'noopener,noreferrer');
     setShowRegisterModal(false);
   };
@@ -49,12 +48,8 @@ export default function App() {
 
   return (
     <div className="bg-black text-white selection:bg-brand-pink/30 selection:text-white font-sans overflow-x-hidden">
-      
       {/* 1. Hero Landing - Cinematic Background video & custom fade system */}
-      <Hero 
-        onExploreClick={handleExploreClick} 
-        onRegisterClick={openRegisterModal} 
-      />
+      <Hero onExploreClick={handleExploreClick} onRegisterClick={openRegisterModal} />
 
       {/* 2. About SheBuilds, Intellexa REC, & Who Can Participate cards */}
       <About onRegisterClick={openRegisterModal} />
@@ -70,7 +65,6 @@ export default function App() {
 
       {/* 6. High-Conversion Closure Section */}
       <section className="py-28 bg-black border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center">
-        {/* Background glow of vivid neon pink */}
         <div className="absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-brand-pink/10 rounded-full filter blur-[130px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-8">
@@ -86,15 +80,16 @@ export default function App() {
               Final Registrations closing June 30, 2026
             </span>
             <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              Ready to <span className="text-gradient-pink font-extrabold text-shadow">Rewrite the Narrative</span>?
+              Ready to{' '}
+              <span className="text-gradient-pink font-extrabold text-shadow">Rewrite the Narrative</span>?
             </h2>
             <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto">
-              Don’t let your groundbreaking ideas gather dust. Secure your invitation to the supreme 24-Hour Offline Grand Finale at Rajalakshmi Engineering College Chennai and build alongside the tech leaders of tomorrow.
+              Don’t let your groundbreaking ideas gather dust. Secure your invitation to the supreme 24-Hour Offline
+              Grand Finale at Rajalakshmi Engineering College Chennai and build alongside the tech leaders of tomorrow.
             </p>
           </motion.div>
 
-          {/* Core Perks Summary list in closure card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -106,7 +101,9 @@ export default function App() {
                 <Shield className="h-4 w-4" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">1. Patent Creation</span>
+                <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">
+                  1. Patent Creation
+                </span>
                 <span className="block text-[10px] text-white/50 leading-relaxed">Turn code into IP</span>
               </div>
             </div>
@@ -116,7 +113,9 @@ export default function App() {
                 <BookOpen className="h-4 w-4" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">2. Academic Research</span>
+                <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">
+                  2. Academic Research
+                </span>
                 <span className="block text-[10px] text-white/50 leading-relaxed">Publish peer-reviewed papers</span>
               </div>
             </div>
@@ -126,13 +125,14 @@ export default function App() {
                 <Rocket className="h-4 w-4" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">3. Incubation Support</span>
+                <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">
+                  3. Incubation Support
+                </span>
                 <span className="block text-[10px] text-white/50 leading-relaxed">Convert code into startups</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Grand Register button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -151,93 +151,94 @@ export default function App() {
       </section>
 
       {/* 7. Footer Section */}
-      <footer className="bg-black py-8 border-t border-white/5 relative">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+      <footer className="relative bg-black py-8 border-t border-white/5">
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="/src/assets/images/design2.png"
+            alt=""
+            className="absolute left-1/2 top-0 h-[550px] max-w-none -translate-x-1/2 opacity-30 md:opacity-75"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-6 pt-12 lg:pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Brand Col */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-4 relative z-10">
             <span className="text-xl font-bold tracking-widest text-white flex items-center gap-2 uppercase">
               SheBuilds <span className="text-purple-400 font-mono">Chennai</span>
             </span>
             <p className="text-white/50 text-xs leading-relaxed max-w-sm">
-              Supporting non-profitable initiatives to host national-level women-in-tech hackathons, empowering builders to create patents, research publications, and startups.
+              Supporting non-profitable initiatives to host national-level women-in-tech hackathons, empowering
+              builders to create patents, research publications, and startups.
             </p>
+
             <div className="pt-4 flex items-center gap-3">
-              <a 
-                href="mailto:shebuildsch@gmail.com" 
+              <a
+                href="mailto:shebuildsch@gmail.com"
                 className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-pink/15 hover:text-brand-pink border border-white/10 transition-all text-white/70"
                 aria-label="Email Host"
               >
                 <Mail className="h-4 w-4" />
               </a>
-              <a 
-                href="https://linkedin.com/company/shebuilds" 
-                target="_blank" 
-                rel="noreferrer" 
+              <a
+                href="https://linkedin.com/company/shebuilds"
+                target="_blank"
+                rel="noreferrer"
                 className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-pink/15 hover:text-brand-pink border border-white/10 transition-all text-white/70"
                 aria-label="LinkedIn Account"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a 
-                href="https://instagram.com/shebuilds_chennai" 
-                target="_blank" 
-                rel="noreferrer" 
+              <a
+                href="https://instagram.com/shebuilds_chennai"
+                target="_blank"
+                rel="noreferrer"
                 className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-pink/15 hover:text-brand-pink border border-white/10 transition-all text-white/70"
                 aria-label="Instagram Account"
               >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a 
-                href="https://shebuildsecosystem.com" 
-                target="_blank" 
-                rel="noreferrer" 
+              <a
+                href="https://shebuildsecosystem.com"
+                target="_blank"
+                rel="noreferrer"
                 className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-pink/15 hover:text-brand-pink border border-white/10 transition-all text-white/70"
                 aria-label="Official Website"
               >
                 <Globe className="h-4 w-4" />
               </a>
             </div>
-          </div>
-          <div className="lg:col-span-4 space-y-4 w-full">
-              <img
-                 src="/src/assets/images/design2.png"
-                 alt="VR girl"
-                 className="max-w-none w-[600px] h-auto mx-auto -ml-29"
-              >
-              </img>
-            </div>
-          {/* Quick Links 
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-4 font-bold">Navigation</h4>
-              <ul className="space-y-2 text-xs">
-                <li><a href="#" className="text-white/60 hover:text-brand-pink transition-colors">Home</a></li>
-                <li><a href="#about" className="text-white/60 hover:text-brand-pink transition-colors">About Us</a></li>
-                <li><a href="#phases" className="text-white/60 hover:text-brand-pink transition-colors">Phases & Dates</a></li>
-                <li><a href="#prizes" className="text-white/60 hover:text-brand-pink transition-colors">Rewards & Perks</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-4 font-bold">Registration Services</h4>
-              <ul className="space-y-2 text-xs">
-                <li><a href="#sponsors" className="text-white/60 hover:text-brand-pink transition-colors">Our Elite Partners</a></li>
-                <li><a href="#about" className="text-white/60 hover:text-brand-pink transition-colors">Hosting Campus Venue</a></li>
-                <li><button onClick={openRegisterModal} className="text-white/60 hover:text-brand-pink transition-colors text-left">Unstop Registration Help</button></li>
-                <li><a href="mailto:shebuildsch@gmail.com" className="text-white/60 hover:text-brand-pink transition-colors">Sponsorship Inquiries</a></li>
-              </ul>
-            </div>
-          </div>
-          */}
 
-          {/* Network description */}
-          <div className="lg:col-span-4 space-y-4" >
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
-              <span className="text-xs text-purple-300 uppercase tracking-widest font-mono font-bold animate-pulse">Registrations Deadline:</span>
+            <div className="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+              <h4 className="text-sm font-semibold text-white uppercase tracking-[0.15em] font-mono">
+                Events Overview
+              </h4>
+              <p className="text-xs text-white/60 leading-relaxed">
+                SheBuilds Chennai powers code sprints, workshops, and mentorship sessions designed for women in tech. Discover past event momentum and current hackathon highlights.
+              </p>
+              <a href="#phases" className="inline-block text-[11px] uppercase tracking-[0.2em] text-brand-pink hover:text-white transition-colors">
+                Explore Events
+              </a>
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 lg:col-start-9 space-y-4 flex flex-col items-end lg:items-end relative z-10">
+            <div className="w-full max-w-md ml-auto p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+              <p className="text-xs text-white/70 leading-relaxed">
+                SheBuilds Chennai Hack 3.0 is a high-energy, women-led tech sprint built to help participants build meaningful prototypes, get mentorship, and launch ideas faster.
+              </p>
+              <p className="text-xs text-white/70 leading-relaxed">
+                Expect inclusive collaboration, live judging, and a powerful showcase of skill, research, and startup-ready thinking.
+              </p>
+            </div>
+            <div className="w-full max-w-md ml-auto p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+              <span className="text-xs text-purple-300 uppercase tracking-widest font-mono font-bold animate-pulse">
+                Registrations Deadline:
+              </span>
               <span className="text-xs font-bold text-white uppercase font-mono">June 30, 2026</span>
             </div>
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-              <h4 className="text-[10px] uppercase font-mono tracking-widest text-amber-700 font-bold">Web Development Team</h4>
+            <div className="w-full max-w-md ml-auto p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+              <h4 className="text-[10px] uppercase font-mono tracking-widest text-amber-700 font-bold">
+                Web Development Team
+              </h4>
               <div className="space-y-1 text-xs leading-relaxed">
                 <a
                   href="https://www.linkedin.com/in/keerthana-m-g-12ba59256/"
@@ -274,15 +275,13 @@ export default function App() {
               </div>
             </div>
           </div>
-
         </div>
 
-        {/* Brand acknowledgement rail */}
-        <div className="col-span-full text-center max-w-7xl mx-auto px-2 mt-12 pt-2 border-t border-white/5 flex flex-col  items-center  gap-4 text-xs text-white/40">
-          <span>
-            © 2026 SheBuilds Chennai. Crafted in close collaboration with Intellexa REC. All Rights Reserved.
+        <div className="col-span-full relative z-30 text-center max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-white/10 flex flex-col items-center gap-4 text-xs text-white/80 bg-black/60 backdrop-blur-sm">
+          <span className="w-full">
+            © 2026 SheBuilds Chennai. Crafted in collaboration with Intellexa REC. All Rights Reserved.
           </span>
-          <button 
+          <button
             onClick={handleScrollToTop}
             className="h-8 pr-3 pl-3 rounded-full bg-white/5 flex items-center gap-1 hover:bg-brand-pink/15 hover:text-brand-pink transition-all border border-white/10 focus:outline-none"
             title="Scroll to Top"
@@ -297,8 +296,6 @@ export default function App() {
       {showRegisterModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-fadeIn">
           <div className="liquid-glass border border-brand-pink/30 rounded-3xl max-w-lg w-full p-8 md:p-10 relative shadow-2xl overflow-hidden neon-glow-pink bg-black/95">
-            
-            {/* Top Close Button */}
             <button
               onClick={() => setShowRegisterModal(false)}
               className="absolute top-6 right-6 text-white/60 hover:text-white hover:bg-white/5 rounded-full p-2 transition-colors focus:outline-none"
@@ -308,24 +305,21 @@ export default function App() {
               <X className="h-5 w-5" />
             </button>
 
-            {/* Modal Heading */}
             <div className="text-center mb-6">
               <span className="text-[9px] font-mono tracking-widest uppercase text-brand-pink bg-brand-pink/10 px-3 py-1.5 border border-brand-pink/30 rounded-full inline-block mb-3">
                 Unstop Registration Gateway
               </span>
-              <h3 className="text-2xl font-bold text-white tracking-tight">
-                SheBuilds Chennai Hack 3.0
-              </h3>
+              <h3 className="text-2xl font-bold text-white tracking-tight">SheBuilds Chennai Hack 3.0</h3>
             </div>
 
-            {/* Quick check details */}
             <div className="space-y-4 mb-8">
               <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4">
                 <Users className="h-5 w-5 text-brand-pink shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <h4 className="font-semibold text-white mb-0.5">Participation Requirements</h4>
                   <p className="text-white/60 leading-relaxed">
-                    Exclusively open to female tech innovators, developers, students, and professionals aged 18+. Standard team compositions of 2 to 3 members.
+                    Exclusively open to female tech innovators, developers, students, and professionals aged 18+. Standard
+                    team compositions of 2 to 3 members.
                   </p>
                 </div>
               </div>
@@ -335,7 +329,8 @@ export default function App() {
                 <div className="text-xs">
                   <h4 className="font-semibold text-white mb-0.5 font-sans">Offline Venue Location</h4>
                   <p className="text-white/60 leading-relaxed">
-                    The Grand Finale occurs in-person at Rajalakshmi Engineering College campus, Highway 4, Valarpuram, Chennai on August 1-2, 2026.
+                    The Grand Finale occurs in-person at Rajalakshmi Engineering College campus, Highway 4, Valarpuram,
+                    Chennai on August 1-2, 2026.
                   </p>
                 </div>
               </div>
@@ -345,13 +340,13 @@ export default function App() {
                 <div className="text-xs">
                   <h4 className="font-semibold text-white mb-0.5 font-sans">Redirecting to Unstop</h4>
                   <p className="text-white/60 leading-relaxed font-sans">
-                    By clicking continue, you will be redirected to the official Unstop portal to complete the registration, team locking, and problem theme choices.
+                    By clicking continue, you will be redirected to the official Unstop portal to complete the registration,
+                    team locking, and problem theme choices.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setShowRegisterModal(false)}
@@ -369,11 +364,10 @@ export default function App() {
                 <ArrowUpRight className="h-4 w-4" />
               </button>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }
+

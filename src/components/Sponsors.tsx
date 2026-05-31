@@ -167,11 +167,11 @@ export default function Sponsors() {
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black via-black/30 to-transparent z-10 pointer-events-none" />
 
           {/* Custom Horizontal Infinite Scrolling loop structure */}
-          <div className="relative flex w-full">
+          <div className="relative flex w-full overflow-hidden pb-6">
             <div className="animate-infinite-scroll flex items-center">
               {duplicatedPartners.map((partner, idx) => (
                 <a
-                  key={idx}
+                  key={`top-${idx}`}
                   href={partner.link ?? '#'}
                   target="_blank"
                   rel="noreferrer"
@@ -191,6 +191,7 @@ export default function Sponsors() {
               ))}
             </div>
           </div>
+
         </div>
 
         <motion.div 
