@@ -179,7 +179,7 @@ export default function App() {
                 <Mail className="h-4 w-4" />
               </a>
               <a
-                href="https://linkedin.com/company/shebuilds"
+                href="https://www.linkedin.com/company/shebuildsecosystem/"
                 target="_blank"
                 rel="noreferrer"
                 className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-pink/15 hover:text-brand-pink border border-white/10 transition-all text-white/70"

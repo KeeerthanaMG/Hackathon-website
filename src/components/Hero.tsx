@@ -280,7 +280,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
             <Instagram className="h-4 w-4" />
           </a>
           <a
-            href="https://linkedin.com/company/shebuilds"
+            href="https://www.shebuildsecosystem.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="liquid-glass rounded-full text-white/70 hover:text-brand-pink hover:bg-white/5 transition-all focus:outline-none focus:ring-2 focus:ring-brand-pink flex items-center justify-center h-12 w-12 border border-white/5"
