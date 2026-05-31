@@ -144,7 +144,7 @@ export default function App() {
               onClick={openRegisterModal}
               className="relative px-10 py-4 bg-white text-black hover:bg-brand-pink hover:text-white rounded-full text-xs uppercase tracking-widest font-extrabold transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-pink cursor-pointer active:scale-95 neon-glow-pink border border-transparent hover:border-brand-pink/40"
             >
-              Secure Your Team Slot on Unstop
+              Secure Your Team Slot 
             </button>
           </motion.div>
         </div>
