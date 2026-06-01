@@ -243,7 +243,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
 
           {/* Subtitle text */}
           <p className="text-white/60 text-xs md:text-sm leading-relaxed px-4 text-center max-w-md font-sans">
-            Connect with like-minded developers, transform your code into protected patents, publish research, and launch startups.
+            Connect with like-minded developers, land internship opportunities, publish research, and launch startups.
           </p>
 
           {/* Action buttons with subtle glows */}

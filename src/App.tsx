@@ -21,6 +21,7 @@ import {
   Rocket,
   Shield,
   BookOpen,
+  Briefcase
 } from 'lucide-react';
 
 export default function App() {
@@ -34,12 +35,7 @@ export default function App() {
   };
 
   const openRegisterModal = () => {
-    setShowRegisterModal(true);
-  };
-
-  const handleUnstopRedirect = () => {
-    window.open('https://unstop.com', '_blank', 'noopener,noreferrer');
-    setShowRegisterModal(false);
+    window.open('https://shebuilds-chennai-hack.devfolio.co', '_blank', 'noopener,noreferrer');
   };
 
   const handleScrollToTop = () => {
@@ -98,13 +94,13 @@ export default function App() {
           >
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
               <div className="p-2 rounded-lg bg-purple-400/15 border border-brand-pink/30 text-purple-400">
-                <Shield className="h-4 w-4" />
+                <Briefcase className="h-4 w-4" />
               </div>
               <div>
                 <span className="block text-xs font-bold text-white uppercase tracking-wider font-mono">
-                  1. Patent Creation
+                  1. Internship Opportunities
                 </span>
-                <span className="block text-[10px] text-white/50 leading-relaxed">Turn code into IP</span>
+                <span className="block text-[10px] text-white/50 leading-relaxed">Direct recruitment tracks</span>
               </div>
             </div>
 
@@ -167,7 +163,7 @@ export default function App() {
             </span>
             <p className="text-white/50 text-xs leading-relaxed max-w-sm">
               Supporting non-profitable initiatives to host national-level women-in-tech hackathons, empowering
-              builders to create patents, research publications, and startups.
+              builders to secure internships, publish research, and launch startups.
             </p>
 
             <div className="pt-4 flex items-center gap-3">
@@ -292,81 +288,14 @@ export default function App() {
         </div>
       </footer>
 
-      {/* 8. Registration Modal for Unstop Redirect */}
-      {showRegisterModal && (
+      {/* 8. Registration Modal (Disabled - all registrations go to Devfolio) */}
+      {/*
+      showRegisterModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-fadeIn">
-          <div className="liquid-glass border border-brand-pink/30 rounded-3xl max-w-lg w-full p-8 md:p-10 relative shadow-2xl overflow-hidden neon-glow-pink bg-black/95">
-            <button
-              onClick={() => setShowRegisterModal(false)}
-              className="absolute top-6 right-6 text-white/60 hover:text-white hover:bg-white/5 rounded-full p-2 transition-colors focus:outline-none"
-              aria-label="Close dialogue"
-              id="modal-close"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            <div className="text-center mb-6">
-              <span className="text-[9px] font-mono tracking-widest uppercase text-brand-pink bg-brand-pink/10 px-3 py-1.5 border border-brand-pink/30 rounded-full inline-block mb-3">
-                Unstop Registration Gateway
-              </span>
-              <h3 className="text-2xl font-bold text-white tracking-tight">SheBuilds Chennai Hack 3.0</h3>
-            </div>
-
-            <div className="space-y-4 mb-8">
-              <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4">
-                <Users className="h-5 w-5 text-brand-pink shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <h4 className="font-semibold text-white mb-0.5">Participation Requirements</h4>
-                  <p className="text-white/60 leading-relaxed">
-                    Exclusively open to female tech innovators, developers, students, and professionals aged 18+. Standard
-                    team compositions of 2 to 3 members.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4">
-                <Calendar className="h-5 w-5 text-brand-pink shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <h4 className="font-semibold text-white mb-0.5 font-sans">Offline Venue Location</h4>
-                  <p className="text-white/60 leading-relaxed">
-                    The Grand Finale occurs in-person at Rajalakshmi Engineering College campus, Highway 4, Valarpuram,
-                    Chennai on August 1-2, 2026.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4">
-                <Info className="h-5 w-5 text-brand-pink shrink-0 mt-0.5" />
-                <div className="text-xs">
-                  <h4 className="font-semibold text-white mb-0.5 font-sans">Redirecting to Unstop</h4>
-                  <p className="text-white/60 leading-relaxed font-sans">
-                    By clicking continue, you will be redirected to the official Unstop portal to complete the registration,
-                    team locking, and problem theme choices.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => setShowRegisterModal(false)}
-                className="flex-1 liquid-glass rounded-xl py-3 text-sm text-center font-medium text-white hover:bg-white/5 transition-all text-white/80"
-                id="modal-cancel-btn"
-              >
-                Go Back
-              </button>
-              <button
-                onClick={handleUnstopRedirect}
-                className="flex-1 bg-white hover:bg-brand-pink text-black hover:text-white py-3 rounded-xl text-xs uppercase tracking-widest font-extrabold text-center flex items-center justify-center gap-1.5 transition-all outline-none focus:ring-2 focus:ring-brand-pink active:scale-95 cursor-pointer"
-                id="modal-proceed-btn"
-              >
-                Proceed to Unstop
-                <ArrowUpRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
+          ...
         </div>
-      )}
+      )
+      */}
     </div>
   );
 }

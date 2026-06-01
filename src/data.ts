@@ -17,7 +17,8 @@ import {
   Flame,
   Globe,
   NotebookTabs,
-  Cpu
+  Cpu,
+  Briefcase
 } from 'lucide-react';
 
 export interface PhaseItem {
@@ -82,7 +83,7 @@ export const phasesData: PhaseItem[] = [
     points: [
       { title: "Choose SDG Theme", desc: "Select from Climate Action, Quality Education, Industry & Infrastructure or gender equality." },
       { title: "Define Problem Architecture", desc: "Clearly present user struggles, market depth, and how your technical solution can scale." },
-      { title: "Unstop Submission", desc: "Upload your concept pitch deck and preliminary architectural wireframe on Unstop before June 30." }
+      { title: "Devfolio Submission", desc: "Upload your concept pitch deck and preliminary architectural wireframe on Devfolio before June 30." }
     ]
   },
   {
@@ -101,11 +102,11 @@ export const phasesData: PhaseItem[] = [
 
 export const perksData: PerkItem[] = [
   {
-    title: "Converting Ideas to Patents",
-    icon: ShieldAlert,
-    description: "Post-hackathon guidance from intellectual property and patent attorneys to turn your prototype into legally protected IP.",
-    incentive: "Filing Support & Consultation",
-    badge: "IP Creation"
+    title: "Internship Opportunities",
+    icon: Briefcase,
+    description: "Top-performing student participants who demonstrate outstanding technical skills will get direct internship interviews and offers with our corporate partners.",
+    incentive: "Interviews & Offers",
+    badge: "Career Growth"
   },
   {
     title: "Publishing Research Papers",
@@ -140,7 +141,7 @@ export const eligibilityCards = [
     title: "Students & Professionals",
     desc: "Perfect sandbox for college students, industry developers, freelancers, and innovators of all technical backgrounds.",
     icon: UserCheck,
-    glow: "rgba(141, 8, 190,0.4)"
+    glow: "rgba(141, 8, 190, 0.4)"
   }
 ];
 
@@ -162,7 +163,7 @@ export const evaluationCriteria = [
   },
   {
     title: "Scaling Potential",
-    desc: "Measures project expansion feasibility, future capabilities, monetization capabilities, and how well it fits patent/startup models.",
+    desc: "Measures project expansion feasibility, future capabilities, monetization capabilities, and how well it fits industry/startup models.",
     icon: Rocket
   }
 ];

@@ -58,7 +58,7 @@ export default function Phases({ onRegisterClick }: PhasesProps) {
                   Online Innovation Challenge
                 </h3>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  Teams will select an SDG theme, formulate a specific problem statement, map solutions, and submit their digital concept wireframes on Unstop before June 30.
+                  Teams will select an SDG theme, formulate a specific problem statement, map solutions, and submit their digital concept wireframes on Devfolio before June 30.
                 </p>
 
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-white/50 inline-block font-mono">
@@ -80,7 +80,7 @@ export default function Phases({ onRegisterClick }: PhasesProps) {
                   </div>
                   <div className="flex gap-3 items-start">
                     <span className="h-5 w-5 rounded-full bg-brand-pink/10 border border-brand-pink/30 text-purple-400 text-xs font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">✓</span>
-                    <p className="text-xs text-white/80"><strong>Official Unstop submission:</strong> Upload concept pitches before the registrations deadline closes.</p>
+                    <p className="text-xs text-white/80"><strong>Official Devfolio submission:</strong> Upload concept pitches before the registrations deadline closes.</p>
                   </div>
                 </div>
               </div>
