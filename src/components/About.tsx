@@ -280,9 +280,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                 </p>
               </div>
 
-              <div className="text-[10px] uppercase font-mono tracking-widest text-purple-400 mt-4 font-bold flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-300">
-                Join our supportive tech circle <ArrowRight className="h-3 w-3" />
-              </div>
+
             </div>
           </motion.div>
           
@@ -302,24 +300,23 @@ export default function About({ onRegisterClick }: AboutProps) {
             Our  <span className="text-gradient-pink font-extrabold text-shadow">Official Partners</span>
            </h2>
            
-            <div className=" py-5 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <div className="py-5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[220px] max-w-[520px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
+                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[340px] md:max-w-[380px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
               >
                 <a
                   href="https://www.linkedin.com/school/rajalakshmi-engineering-college/"
                   target="_blank"
                   rel="noreferrer"
-                  className="block w-full h-full text-inherit"
+                  className="flex flex-col items-center justify-center w-full h-full text-inherit"
                 >
-                  <h4 className="text-sm font-semibold text-white mb-3 tracking-wide uppercase font-mono">Official Hosting Partner</h4>
-                  <div className="h-[160px] w-full max-w-[320px] flex items-center justify-center rounded-md mx-auto">
-                    {/* Place your REC logo at src/assets/images/rec_logo.png */}
-                    <img src="/src/assets/images/rec_logo.png" alt="REC logo placeholder" className="max-h-[200px] object-contain" />
+                  <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase font-mono text-center">Official Hosting Partner</h4>
+                  <div className="flex-1 w-full flex items-center justify-center p-4">
+                    <img src="/src/assets/images/rec_logo.png" alt="REC logo" className="max-h-full max-w-full object-contain" />
                   </div>
                 </a>
               </motion.div>
@@ -329,18 +326,17 @@ export default function About({ onRegisterClick }: AboutProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="liquid-glass rounded-2xl p-5 border border-white/10 bg-black/40 flex flex-col items-center justify-center min-h-[220px] max-w-[520px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
+                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[340px] md:max-w-[380px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_0_32px_rgba(167,139,250,0.35)] hover:border-purple-400/50"
               >
                 <a
                   href="https://www.linkedin.com/company/intellexa-rec/"
                   target="_blank"
                   rel="noreferrer"
-                  className="block w-full h-full text-inherit"
+                  className="flex flex-col items-center justify-center w-full h-full text-inherit"
                 >
-                  <h4 className="text-sm font-semibold text-white mb-3 tracking-wide uppercase font-mono">Event & Technology Partner</h4>
-                  <div className="h-[200px] w-full max-w-[320px] flex items-center justify-center rounded-md mx-auto">
-                    {/* Place your Intellexa logo at src/assets/images/intellexa_logo.png */}
-                    <img src="/src/assets/images/intellexa_logo.png" alt="Intellexa logo placeholder" className="max-h-[260px] object-contain" />
+                  <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase font-mono text-center">Event & Technology Partner</h4>
+                  <div className="flex-1 w-full flex items-center justify-center p-4">
+                    <img src="/src/assets/images/intellexa_logo.png" alt="Intellexa logo" className="max-h-full max-w-full object-contain" />
                   </div>
                 </a>
               </motion.div>

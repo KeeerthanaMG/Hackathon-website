@@ -165,6 +165,16 @@ export default function App() {
               Supporting non-profitable initiatives to host national-level women-in-tech hackathons, empowering
               builders to secure internships, publish research, and launch startups.
             </p>
+            <div className="pt-2">
+              <a 
+                href="https://instagram.com/shebuilds_chennai"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-brand-pink hover:text-white transition-colors"
+              >
+                Join our supportive tech circle <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
 
             <div className="pt-4 flex items-center gap-3">
               <a

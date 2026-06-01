@@ -144,14 +144,6 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
                 className="h-[60px] w-auto rounded-2xl border border-white/10 object-contain shadow-sm"
                 referrerPolicy="no-referrer"
               />
-              <div className="hidden md:flex flex-col text-left">
-                <span className="text-sm font-extrabold uppercase tracking-widest text-white">
-                  SheBuilds
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-purple-400 font-bold">
-                  Chennai
-                </span>
-              </div>
             </a>
 
             {/* Nav Links based strictly on custom sections */}
