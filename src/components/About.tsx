@@ -63,36 +63,20 @@ export default function About({ onRegisterClick }: AboutProps) {
   const [eventsCount, setEventsCount] = useState(0);
   const [mentorsCount, setMentorsCount] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
-  // Dynamically import all image files from the assets folder so any images
-  // you add to `src/assets/images/` are picked up automatically.
-  // Exclude the logo file so it doesn't appear in the slideshow.
-  // Vite's import.meta.glob with `as: 'url'` returns mapped URLs (eagerly).
-  const imagesMap = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg,webp}', { eager: true, as: 'url' }) as Record<string, string>;
-  const allowedPhotoNames = [
-    'photo_1.jpeg',
-    'photo_2.jpeg',
-    'photo_3.jpeg',
-    'photo_4.jpeg',
-    'photo_5.jpeg',
-    'photo_6.jpeg',
-    'photo_7.jpeg',
-    'photo_8.jpeg',
-    'photo_9.jpeg',
-    'photo_10.jpeg',
-    'photo_11.jpeg',
-    'photo_12.jpeg',
+  const eventPhotos = [
+    '/assets/images/photo_1.jpeg',
+    '/assets/images/photo_2.jpeg',
+    '/assets/images/photo_3.jpeg',
+    '/assets/images/photo_4.jpeg',
+    '/assets/images/photo_5.jpeg',
+    '/assets/images/photo_6.jpeg',
+    '/assets/images/photo_7.jpeg',
+    '/assets/images/photo_8.jpeg',
+    '/assets/images/photo_9.jpeg',
+    '/assets/images/photo_10.jpeg',
+    '/assets/images/photo_11.jpeg',
+    '/assets/images/photo_12.jpeg',
   ];
-
-  const eventPhotos = Object.entries(imagesMap || {})
-    .filter(([filePath]) =>
-      allowedPhotoNames.some((name) => filePath.endsWith(name))
-    )
-    .map(([, url]) => url);
-
-  // Fallback to a single placeholder if no images found
-  if (eventPhotos.length === 0) {
-    eventPhotos.push('/src/assets/images/women_tech_3d_1779992842675.png');
-  }
 
   // Observe the section and toggle visibility; do not disconnect so we can
   // animate both on enter and on leave (reveal-and-dismiss behavior).
@@ -316,7 +300,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                 >
                   <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase font-mono text-center">Official Hosting Partner</h4>
                   <div className="flex-1 w-full flex items-center justify-center p-4">
-                    <img src="/src/assets/images/rec_logo.png" alt="REC logo" className="max-h-full max-w-full object-contain" />
+                    <img src="/assets/images/rec_logo.png" alt="REC logo" className="max-h-full max-w-full object-contain" />
                   </div>
                 </a>
               </motion.div>
@@ -336,7 +320,7 @@ export default function About({ onRegisterClick }: AboutProps) {
                 >
                   <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase font-mono text-center">Event & Technology Partner</h4>
                   <div className="flex-1 w-full flex items-center justify-center p-4">
-                    <img src="/src/assets/images/intellexa_logo.png" alt="Intellexa logo" className="max-h-full max-w-full object-contain" />
+                    <img src="/assets/images/intellexa_logo.png" alt="Intellexa logo" className="max-h-full max-w-full object-contain" />
                   </div>
                 </a>
               </motion.div>

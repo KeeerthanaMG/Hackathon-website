@@ -139,7 +139,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           <div className="flex items-center gap-6">
             <a href="#" className="flex items-center gap-3 focus:outline-none" id="nav-logo">
               <img
-                src="/src/assets/images/shebuilds_chennai_logo.png"
+                src="/assets/images/shebuilds_chennai_logo.png"
                 alt="SheBuilds Chennai logo"
                 className="h-[60px] w-auto rounded-2xl border border-white/10 object-contain shadow-sm"
                 referrerPolicy="no-referrer"

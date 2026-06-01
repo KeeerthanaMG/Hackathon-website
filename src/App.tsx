@@ -150,7 +150,7 @@ export default function App() {
       <footer className="relative bg-black py-8 border-t border-white/5">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="/src/assets/images/design2.png"
+            src="/assets/images/design2.png"
             alt=""
             className="absolute left-1/2 top-0 h-[550px] max-w-none -translate-x-1/2 opacity-30 md:opacity-75"
           />
