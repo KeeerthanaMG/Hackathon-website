@@ -215,12 +215,12 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
             className="text-4xl md:text-7xl lg:text-8xl text-white mb-2 tracking-tight select-none italic font-serif leading-none"
             id="hero-heading"
           >
-             SheBuilds Chennai Hack
+            SheBuilds Chennai Hack
           </h1>
 
           {/* Localized descriptor lines */}
           <p className="text-white/40 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold mb-10 max-w-2xl px-4 font-mono">
-            Empowering Female Developers • 24-Hour Offline Grand Finale • Chennai • 1st and 2nd August 2026 
+            Empowering Female Developers • 24-Hour Offline Grand Finale • Chennai • 1st and 2nd August 2026
           </p>
         </motion.div>
 
@@ -244,7 +244,7 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
               onClick={onRegisterClick}
               className="relative px-8 py-3 bg-white text-black hover:bg-brand-pink hover:text-white rounded-full text-xs uppercase tracking-widest font-extrabold transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-pink cursor-pointer active:scale-95"
             >
-              Register 
+              Register
             </button>
             <button
               onClick={onExploreClick}
@@ -257,33 +257,6 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           </div>
         </motion.div>
       </main>
-
-      {/* Hero Footer */}
-      <footer className="relative z-10 flex flex-col items-center gap-2 pb-6">
-        <div className="flex justify-center gap-2">
-          <a
-            href="https://instagram.com/shebuilds_chennai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="liquid-glass rounded-full text-white/70 hover:text-brand-pink hover:bg-white/5 transition-all focus:outline-none focus:ring-2 focus:ring-brand-pink flex items-center justify-center h-12 w-12 border border-white/5"
-            aria-label="Instagram Page"
-            id="social-link-instagram"
-          >
-            <Instagram className="h-4 w-4" />
-          </a>
-          <a
-            href="https://www.shebuildsecosystem.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="liquid-glass rounded-full text-white/70 hover:text-brand-pink hover:bg-white/5 transition-all focus:outline-none focus:ring-2 focus:ring-brand-pink flex items-center justify-center h-12 w-12 border border-white/5"
-            aria-label="LinkedIn Page"
-            id="social-link-linkedin"
-          >
-            <Globe className="h-4 w-4" />
-          </a>
-        </div>
-
-      </footer>
     </div>
   );
 }
