@@ -1,23 +1,55 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Mail, ArrowUpRight } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { Mail, ArrowUpRight } from "lucide-react";
 // import { communityPartners } from '../data';
 
 export default function Sponsors() {
   // Duplicating partners for perfect continuous horizontal scroll representation
-  // const duplicatedPartners = [...communityPartners, ...communityPartners, ...communityPartners, ...communityPartners];
+  const communityPartners = [
+    {
+      name: "Namma Flutter Chennai",
+      logo: "/assets/images/NAMMAFLUTTER.jpeg",
+    },
+    {
+      name: "Codesapiens",
+      logo: "/assets/images/CODESAPIENS.jpeg",
+    },
+    {
+      name: "Chennai React",
+      logo: "/assets/images/CHENNAIREACT.jpeg",
+    },
+    {
+      name: "Code on jvm",
+      logo: "/assets/images/CODEONJVM.jpeg",
+    },
+    {
+      name: "AI geeks",
+      logo: "/assets/images/AIGEEKS.png",
+    },
+    {
+      name: "WomenTech Network Team",
+      logo: "/assets/images/WOMENTECHNETWORK.png",
+    },
+    {
+      name: "D3 Community",
+      logo: "/assets/images/D3.png",
+    },
+  ];
 
   const handleSponsorEmail = () => {
-    window.location.href = "mailto:connect@shebuildschennai.in?subject=Sponsorship Request for SheBuilds Chennai Hack 3.0";
+    window.location.href =
+      "mailto:connect@shebuildschennai.in?subject=Sponsorship Request for SheBuilds Chennai Hack 3.0";
   };
 
   return (
-    <section id="sponsors" className="pt-12 pb-20 bg-black border-t border-white/5 relative overflow-hidden">
+    <section
+      id="sponsors"
+      className="pt-12 pb-20 bg-black border-t border-white/5 relative overflow-hidden"
+    >
       {/* Background neon blurs */}
       <div className="absolute left-1/2 top-1/2 w-[500px] h-[500px] bg-brand-pink/5 rounded-full filter blur-[150px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
         {/* Section Header (Commented out for now) */}
         {/*
         <div className="text-center max-w-2xl mx-auto mb-14 animate-fadeIn">
@@ -47,16 +79,39 @@ export default function Sponsors() {
         */}
 
         {/* Community Partners Double Infinite Horizontal Slider (Commented out for now) */}
-        {/*
-        <div className="border-t border-white/5 pt-12 overflow-hidden relative">
-          <h4 className="text-center text-[13px] uppercase font-mono tracking-widest text-white/50 mb-8">
-            Collaborating Tech Communities
-          </h4>
-          ...
-        </div>
-        */}
+        {
+          <div className="border-t border-white/5 pt-8 overflow-hidden relative">
+            <h4 className="text-center text-[20 px] uppercase font-mono tracking-widest text-white/50 mb-6">
+              Collaborating Tech Communities
+            </h4>
+            <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
+              {communityPartners.map((community) => (
+                <div
+                  key={community.name}
+                  className="
+        w-40 h-24
+        flex items-center justify-center
+        opacity-85
+        hover:opacity-100
+        transition-all duration-300
+      "
+                >
+                  <img
+                    src={community.logo}
+                    alt={community.name}
+                    className="
+          max-w-full
+          max-h-20
+          object-contain
+        "
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        }
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -71,7 +126,9 @@ export default function Sponsors() {
               Want to Become a Sponsor?
             </h3>
             <p className="text-sm text-white/70 leading-relaxed">
-              Partner with SheBuilds Chennai to showcase your brand, access top female tech talent, and support impactful community-driven innovation.
+              Partner with SheBuilds Chennai to showcase your brand, access top
+              female tech talent, and support impactful community-driven
+              innovation.
             </p>
           </div>
 
