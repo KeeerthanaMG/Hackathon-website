@@ -34,6 +34,45 @@ export default function Sponsors() {
       name: "D3 Community",
       logo: "/assets/images/D3.png",
     },
+    {
+      name: "Nexora",
+      logo: "/assets/images/NEXORA.jpeg",
+    },
+  ];
+
+  const duplicatedcommunityPartners = [
+    {
+      name: "Namma Flutter Chennai",
+      logo: "/assets/images/NAMMAFLUTTER.jpeg",
+    },
+    {
+      name: "Codesapiens",
+      logo: "/assets/images/CODESAPIENS.jpeg",
+    },
+    {
+      name: "Chennai React",
+      logo: "/assets/images/CHENNAIREACT.jpeg",
+    },
+    {
+      name: "Code on jvm",
+      logo: "/assets/images/CODEONJVM.jpeg",
+    },
+    {
+      name: "AI geeks",
+      logo: "/assets/images/AIGEEKS.png",
+    },
+    {
+      name: "WomenTech Network Team",
+      logo: "/assets/images/WOMENTECHNETWORK.png",
+    },
+    {
+      name: "D3 Community",
+      logo: "/assets/images/D3.png",
+    },
+    {
+      name: "Nexora",
+      logo: "/assets/images/NEXORA.jpeg",
+    },
   ];
 
   const handleSponsorEmail = () => {
@@ -78,38 +117,66 @@ export default function Sponsors() {
         </div>
         */}
 
-        {/* Community Partners Double Infinite Horizontal Slider (Commented out for now) */}
-        {
-          <div className="border-t border-white/5 pt-8 overflow-hidden relative">
-            <h4 className="text-center text-[20 px] uppercase font-mono tracking-widest text-white/50 mb-6">
-              Collaborating Tech Communities
-            </h4>
-            <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-              {communityPartners.map((community) => (
-                <div
-                  key={community.name}
-                  className="
-        w-40 h-24
-        flex items-center justify-center
-        opacity-85
-        hover:opacity-100
-        transition-all duration-300
-      "
-                >
-                  <img
-                    src={community.logo}
-                    alt={community.name}
+        {/* Community Partners Infinite Carousel */}
+        <div className="border-t border-white/5 pt-8 overflow-hidden relative">
+          <h4 className="text-center text-[28px] md:text-[32px] uppercase font-mono tracking-widest text-white/50 mb-14">
+            Collaborating Tech Communities
+          </h4>
+
+          <div className="relative overflow-hidden">
+            {/* Edge fade */}
+            <div className="absolute left-0 top-0 z-10 h-full w-15 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+
+            <div className="absolute right-0 top-0 z-10 h-full w-15 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
+            <motion.div
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                duration: 28,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex w-max gap-12"
+            >
+              {[...communityPartners, ...communityPartners].map(
+                (community, index) => (
+                  <div
+                    key={`${community.name}-${index}`}
                     className="
-          max-w-full
-          max-h-20
-          object-contain
-        "
-                  />
-                </div>
-              ))}
-            </div>
+              w-72 h-44 md:w-72 md:h-44
+              bg-white/95
+              rounded-2xl
+              border
+              border-brand-pink/20
+              flex
+              items-center
+              justify-center
+              p-3
+              shrink-0
+              transition-all
+              duration-300
+              hover:scale-105
+              hover:border-brand-pink/50
+              hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]
+              max-w-[90%]
+  
+            "
+                  >
+                    <img
+                      src={community.logo}
+                      alt={community.name}
+                      className="
+                max-w-full
+                max-h-28
+                object-contain
+              "
+                    />
+                  </div>
+                ),
+              )}
+            </motion.div>
           </div>
-        }
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

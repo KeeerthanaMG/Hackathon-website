@@ -1,7 +1,14 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Award, Sparkles, ShieldCheck, ArrowUpRight, Coins, Target } from 'lucide-react';
-import { perksData } from '../data';
+import React from "react";
+import { motion } from "motion/react";
+import {
+  Award,
+  Sparkles,
+  ShieldCheck,
+  ArrowUpRight,
+  Coins,
+  Target,
+} from "lucide-react";
+import { perksData } from "../data";
 
 interface PrizesProps {
   onRegisterClick: () => void;
@@ -9,14 +16,16 @@ interface PrizesProps {
 
 export default function Prizes({ onRegisterClick }: PrizesProps) {
   return (
-    <section id="prizes" className="pt-3 pb-12 bg-black border-t border-white/5 relative overflow-hidden">
+    <section
+      id="prizes"
+      className="pt-3 pb-12 bg-black border-t border-white/5 relative overflow-hidden"
+    >
       {/* Background glow of vivid neon pink */}
       <div className="absolute right-0 bottom-1/4 w-[400px] h-[400px] bg-brand-pink/10 rounded-full filter blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -27,18 +36,22 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
             Grand Rewards
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-            Comprehensive <span className="text-gradient-pink font-extrabold text-shadow">₹30,000+</span> Prize Pool & Complete Support.
+            Comprehensive{" "}
+            <span className="text-gradient-pink font-extrabold text-shadow">
+              ₹50,000+
+            </span>{" "}
+            Prize Pool & Complete Support.
           </h2>
           <p className="text-white/60 text-sm md:text-base mt-2">
-            In addition to high-value rewards, we support winning creations way beyond standard hackathon timelines.
+            In addition to high-value rewards, we support winning creations way
+            beyond standard hackathon timelines.
           </p>
         </motion.div>
 
         {/* Big Spotlight Prize Box containing total sum and ecosystem badges */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16 font-sans">
-          
           {/* Main Giant Glowing Card reflecting 30k+ rewards and perks (Spans 5 columns) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -51,28 +64,36 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <Coins className="h-5 w-5 text-brand-pink animate-pulse" />
-                <span className="text-[10px] uppercase font-mono tracking-widest text-purple-400 font-bold">Hackathon Pool</span>
+                <span className="text-[10px] uppercase font-mono tracking-widest text-purple-400 font-bold">
+                  Hackathon Pool
+                </span>
               </div>
-              
+
               <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-3">
-                ₹30,000+
+                ₹50,000+
               </h3>
               <p className="text-white/80 text-sm font-semibold mb-6">
-                Total Cache Pool & Ecosystem Perks
+                Total Cash Pool & Ecosystem Perks
               </p>
-              
+
               <div className="space-y-4">
                 <div className="p-4 bg-white/5 border border-white/10 rounded-xl">
-                  <span className="text-[10px] tracking-widest text-white/50 block font-mono uppercase">Ecosystem Advantage</span>
+                  <span className="text-[10px] tracking-widest text-white/50 block font-mono uppercase">
+                    Ecosystem Advantage
+                  </span>
                   <p className="text-xs text-white/80 leading-relaxed mt-1">
-                    Every participant receives premium developer trials, priority support access, and certified participation credentials with unique validation keys.
+                    Every participant gets access to mentor sessions, guidance
+                    from industry experts and jury members, and a certificate of
+                    participation.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="pt-8 border-t border-white/5 flex items-center justify-between">
-              <span className="text-[10px] text-white/40 uppercase font-mono tracking-wider">Certified by shebuilds</span>
+              <span className="text-[10px] text-white/40 uppercase font-mono tracking-wider">
+                Certified by shebuilds
+              </span>
               <button
                 onClick={onRegisterClick}
                 className="bg-white hover:bg-brand-pink text-black hover:text-white text-xs uppercase tracking-widest font-extrabold py-2 px-5 rounded-full transition-all duration-300 active:scale-95 focus:outline-none focus:ring-1 focus:ring-brand-pink flex items-center gap-1 cursor-pointer"
@@ -85,7 +106,6 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
 
           {/* Combined Post-Hackathon Perks Cards (Spans 7 columns) */}
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-1 gap-6">
-            
             {/* Title representing after-match support */}
             <div className="space-y-6">
               <h3 className="text-lg font-bold tracking-widest uppercase text-white pl-4 border-l-2 border-brand-pink mt-1">
@@ -109,15 +129,15 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
                         <div className="inline-block px-2.5 py-1 bg-brand-pink/10 border border-brand-pink/30 rounded-md text-[9px] uppercase font-mono font-bold text-purple-400 mb-4">
                           {perk.badge}
                         </div>
-                        
+
                         <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-105 transition-transform">
                           <IconComp className="h-5 w-5" />
                         </div>
-                        
+
                         <h4 className="text-sm font-bold text-white mb-2 leading-tight">
                           {perk.title}
                         </h4>
-                        
+
                         <p className="text-[11px] text-white/50 leading-relaxed mb-4">
                           {perk.description}
                         </p>
@@ -131,11 +151,8 @@ export default function Prizes({ onRegisterClick }: PrizesProps) {
                 })}
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

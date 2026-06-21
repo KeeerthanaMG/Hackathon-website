@@ -68,14 +68,23 @@ export default function Phases({ onRegisterClick }: PhasesProps) {
                 </div>
 
                 <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
-                  Online Innovation Challenge
+                  Online PPT Submission Round
                 </h3>
                 <p className="text-white/70 text-sm leading-relaxed">
                   Teams will select an SDG theme, formulate a specific problem
-                  statement, map solutions, and submit their digital concept
-                  wireframes on Devfolio before June 30.
+                  statement, map solutions, and submit their PPTs on Devfolio
+                  before June 30.
                 </p>
-
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-pink/10 border border-brand-pink/30 text-sm w-fit hover:bg-brand-pink/15 transition-all">
+                  <a
+                    href="https://docs.google.com/presentation/d/1nMO2_X55roZTvX3-w9uyZ7SgKQsNSqu4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-400 font-semibold hover:underline"
+                  >
+                    View PPT Template
+                  </a>
+                </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-white/50 inline-block font-mono">
                   📢 TOP 50 SHORTLIST ANNOUNCEMENT:{" "}
                   <span className="text-purple-400 font-bold">
@@ -104,8 +113,8 @@ export default function Phases({ onRegisterClick }: PhasesProps) {
                       ✓
                     </span>
                     <p className="text-xs text-white/80">
-                      <strong>Validate Solution Approach:</strong> Lay out clear
-                      database schemas, wireframes, and workflows.
+                      <strong>Prepare Concept Pitch:</strong>
+                      Outline the idea, impact, and implementation plan..
                     </p>
                   </div>
                   <div className="flex gap-3 items-start">
@@ -155,7 +164,7 @@ export default function Phases({ onRegisterClick }: PhasesProps) {
                 </p>
 
                 <div className="p-4 rounded-xl bg-brand-pink/10 border border-brand-pink/20 text-xs text-white/80 inline-block font-mono">
-                  🏫 VENUE HOST:{" "}
+                  🏫 VENUE:{" "}
                   <span className="text-white font-extrabold">
                     Rajalakshmi Engineering College, Chennai
                   </span>
