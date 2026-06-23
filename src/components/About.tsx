@@ -312,7 +312,7 @@ export default function About({ onRegisterClick }: AboutProps) {
 
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-              <span className="text-gradient-pink">Title Sponsor</span>
+              <span className="text-gradient-pink">Hackathon Partner</span>
             </h2>
           </div>
 
