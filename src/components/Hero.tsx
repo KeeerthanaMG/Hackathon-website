@@ -1,6 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight, Instagram, Twitter, Globe, Sparkles, Code2, Cpu } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
+import {
+  ArrowRight,
+  Instagram,
+  Twitter,
+  Globe,
+  Sparkles,
+  Code2,
+  Cpu,
+} from "lucide-react";
 
 interface HeroProps {
   onExploreClick: () => void;
@@ -11,7 +19,6 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const animationFrameRef = useRef<number | null>(null);
   const fadingOutRef = useRef<boolean>(false);
-
 
   // Custom JS interpolation based animation for loop fading
   const animateOpacity = (targetOpacity: number, duration: number) => {
@@ -28,7 +35,8 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      const newOpacity = currentOpacity + (targetOpacity - currentOpacity) * progress;
+      const newOpacity =
+        currentOpacity + (targetOpacity - currentOpacity) * progress;
       video.style.opacity = newOpacity.toString();
 
       if (progress < 1) {
@@ -61,7 +69,8 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
     video.style.opacity = "0";
     setTimeout(() => {
       video.currentTime = 0;
-      video.play()
+      video
+        .play()
         .then(() => {
           fadingOutRef.current = false;
           animateOpacity(1, 500); // 500ms fade-in
@@ -82,7 +91,8 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
       // Set initial state
       video.style.opacity = "0";
       // Try play immediately
-      video.play()
+      video
+        .play()
         .then(() => {
           animateOpacity(1, 500);
         })
@@ -98,12 +108,10 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
     };
   }, []);
 
-
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -137,7 +145,11 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
         >
           {/* Logo Area: SheBuilds Chennai Custom Vector Badge */}
           <div className="flex items-center gap-6">
-            <a href="#" className="flex items-center gap-3 focus:outline-none" id="nav-logo">
+            <a
+              href="#"
+              className="flex items-center gap-3 focus:outline-none"
+              id="nav-logo"
+            >
               <img
                 src="/assets/images/shebuilds_chennai_logo.png"
                 alt="SheBuilds Chennai logo"
@@ -149,28 +161,28 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
             {/* Nav Links based strictly on custom sections */}
             <nav className="hidden md:flex items-center gap-8 ml-4 self-center">
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => scrollToSection("about")}
                 className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-about"
               >
                 About
               </button>
               <button
-                onClick={() => scrollToSection('phases')}
+                onClick={() => scrollToSection("phases")}
                 className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-roadmap"
               >
                 Phases & Dates
               </button>
               <button
-                onClick={() => scrollToSection('prizes')}
+                onClick={() => scrollToSection("prizes")}
                 className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-perks"
               >
                 Perks & Prizes
               </button>
               <button
-                onClick={() => scrollToSection('sponsors')}
+                onClick={() => scrollToSection("sponsors")}
                 className="text-white/70 hover:text-white hover:text-brand-pink transition-colors text-xs uppercase tracking-widest font-bold leading-none focus:outline-none"
                 id="nav-link-partners"
               >
@@ -186,7 +198,11 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
               animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{
+                duration: 3.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="liquid-glass border border-white/10 bg-brand-pink/80 hover:bg-brand-pink/100 transition-all text-white rounded-full px-10 py-3 text-sm uppercase tracking-[0.25em] font-extrabold min-w-[220px] text-center focus:outline-none focus:ring-2 focus:ring-brand-pink shadow-xl shadow-brand-pink/20"
               id="btn-nav-register"
             >
@@ -219,8 +235,45 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           </h1>
 
           {/* Localized descriptor lines */}
+          <a
+            href="https://cccl.ai/"
+            target="_blank"
+            rel="noreferrer"
+            className="
+    group
+    mb-8
+    inline-flex
+    items-center
+    gap-2
+    rounded-full
+    border
+    border-white/10
+    bg-white/5
+    px-5
+    py-2
+    font-mono
+    text-[10px]
+    md:text-xs
+    uppercase
+    tracking-[0.25em]
+    text-white/70
+    transition-all
+    duration-300
+    hover:border-purple-400/60
+    hover:bg-purple-500/10
+    hover:text-white
+    hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]
+  "
+          >
+            <span className="text-white/75">Powered by</span>
+
+            <span className="font-bold text-white group-hover:text-purple-300">
+              CCCL
+            </span>
+          </a>
           <p className="text-white/40 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold mb-10 max-w-2xl px-4 font-mono">
-            Empowering Female Developers • 24-Hour Offline Grand Finale • Chennai • 1st and 2nd August 2026
+            Empowering Female Developers • 24-Hour Offline Grand Finale •
+            Chennai • 1st and 2nd August 2026
           </p>
         </motion.div>
 
@@ -231,11 +284,10 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
           transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
           className="max-w-xl w-full space-y-6 flex flex-col items-center"
         >
-
-
           {/* Subtitle text */}
           <p className="text-white/60 text-xs md:text-sm leading-relaxed px-4 text-center max-w-md font-sans">
-            Connect with like-minded developers, land internship opportunities, publish research, and launch startups.
+            Connect with like-minded developers, land internship opportunities,
+            publish research, and launch startups.
           </p>
 
           {/* Action buttons with subtle glows */}

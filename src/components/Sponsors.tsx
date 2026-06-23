@@ -4,6 +4,24 @@ import { Mail, ArrowUpRight } from "lucide-react";
 // import { communityPartners } from '../data';
 
 export default function Sponsors() {
+  const collegePartners = [
+    {
+      name: "GDG PEC",
+      logo: "/assets/images/gdg-pec.webp",
+    },
+    {
+      name: "IEEE DDS-Sairam",
+      logo: "/assets/images/deis-sairam.jpeg",
+    },
+    {
+      name: "ACM - Prathyusha",
+      logo: "/assets/images/pec-acm.jpeg",
+    },
+    {
+      name: "Tech Vayuna- SRM",
+      logo: "/assets/images/srm.jpg",
+    },
+  ];
   // Duplicating partners for perfect continuous horizontal scroll representation
   const communityPartners = [
     {
@@ -15,8 +33,16 @@ export default function Sponsors() {
       logo: "/assets/images/CODESAPIENS.jpeg",
     },
     {
+      name: "DevRel Squad",
+      logo: "/assets/images/DEVRELSQUAD.jpeg",
+    },
+    {
       name: "Chennai React",
       logo: "/assets/images/CHENNAIREACT.jpeg",
+    },
+    {
+      name: "FOF Chennai",
+      logo: "/assets/images/fof-logo.jpg",
     },
     {
       name: "Code on jvm",
@@ -38,40 +64,9 @@ export default function Sponsors() {
       name: "Nexora",
       logo: "/assets/images/NEXORA.jpeg",
     },
-  ];
-
-  const duplicatedcommunityPartners = [
     {
-      name: "Namma Flutter Chennai",
-      logo: "/assets/images/NAMMAFLUTTER.jpeg",
-    },
-    {
-      name: "Codesapiens",
-      logo: "/assets/images/CODESAPIENS.jpeg",
-    },
-    {
-      name: "Chennai React",
-      logo: "/assets/images/CHENNAIREACT.jpeg",
-    },
-    {
-      name: "Code on jvm",
-      logo: "/assets/images/CODEONJVM.jpeg",
-    },
-    {
-      name: "AI geeks",
-      logo: "/assets/images/AIGEEKS.png",
-    },
-    {
-      name: "WomenTech Network Team",
-      logo: "/assets/images/WOMENTECHNETWORK.png",
-    },
-    {
-      name: "D3 Community",
-      logo: "/assets/images/D3.png",
-    },
-    {
-      name: "Nexora",
-      logo: "/assets/images/NEXORA.jpeg",
+      name: "Cybrian",
+      logo: "/assets/images/cybrian.jpeg",
     },
   ];
 
@@ -116,7 +111,58 @@ export default function Sponsors() {
           </div>
         </div>
         */}
+        {/* College Partners Infinite Carousel */}
 
+        <div className="border-t border-white/5 pt-12 mt-16 overflow-hidden relative">
+          <h4 className="text-center text-[28px] md:text-[32px] uppercase font-mono tracking-widest text-white/50 mb-14">
+            College Partners
+          </h4>
+
+          <div className="relative overflow-hidden">
+            {/* Edge fade */}
+
+            <div className="absolute left-0 top-0 z-10 h-full w-15 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+
+            <div className="absolute right-0 top-0 z-10 h-full w-15 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
+            <motion.div
+              initial={{ x: "-50%" }}
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{
+                duration: 28,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex w-max gap-12"
+            >
+              {[...collegePartners, ...collegePartners].map(
+                (college, index) => (
+                  <div
+                    key={`${college.name}-${index}`}
+                    className="
+              w-72 h-44
+              bg-white/95
+              rounded-2xl
+              border border-brand-pink/20
+              flex items-center justify-center
+              p-3 shrink-0
+              transition-all duration-300
+              hover:scale-105
+              hover:border-brand-pink/50
+              hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]
+            "
+                  >
+                    <img
+                      src={college.logo}
+                      alt={college.name}
+                      className="max-w-full max-h-28 object-contain"
+                    />
+                  </div>
+                ),
+              )}
+            </motion.div>
+          </div>
+        </div>
         {/* Community Partners Infinite Carousel */}
         <div className="border-t border-white/5 pt-8 overflow-hidden relative">
           <h4 className="text-center text-[28px] md:text-[32px] uppercase font-mono tracking-widest text-white/50 mb-14">
