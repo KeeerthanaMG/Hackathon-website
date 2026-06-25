@@ -19,7 +19,19 @@ export default function Sponsors() {
     },
     {
       name: "Tech Vayuna- SRM",
-      logo: "/assets/images/srm.jpg",
+      logo: "/assets/images/srm.png",
+    },
+    {
+      name: "Cyborg SRM",
+      logo: "/assets/images/cyborg.jpeg",
+    },
+    {
+      name: "Aurix Simats",
+      logo: "/assets/images/aurix-simats.jpeg",
+    },
+    {
+      name: "Microsoft Club - Sathiyabama Institute of Technology",
+      logo: "/assets/images/microsot-sist.jpeg",
     },
   ];
   // Duplicating partners for perfect continuous horizontal scroll representation
@@ -27,6 +39,14 @@ export default function Sponsors() {
     {
       name: "Namma Flutter Chennai",
       logo: "/assets/images/NAMMAFLUTTER.jpeg",
+    },
+    {
+      name: "Indian data club ",
+      logo: "/assets/images/indiandataclub.jpg",
+    },
+    {
+      name: "Nous",
+      logo: "/assets/images/nous.jpg",
     },
     {
       name: "Codesapiens",
@@ -141,7 +161,7 @@ export default function Sponsors() {
                     key={`${college.name}-${index}`}
                     className="
               w-72 h-44
-              bg-white/95
+              bg-white
               rounded-2xl
               border border-brand-pink/20
               flex items-center justify-center
@@ -190,7 +210,7 @@ export default function Sponsors() {
                     key={`${community.name}-${index}`}
                     className="
               w-72 h-44 md:w-72 md:h-44
-              bg-white/95
+              bg-white
               rounded-2xl
               border
               border-brand-pink/20

@@ -240,36 +240,42 @@ export default function Hero({ onExploreClick, onRegisterClick }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             className="
-    group
-    mb-8
-    inline-flex
-    items-center
-    gap-2
-    rounded-full
-    border
-    border-white/10
-    bg-white/5
-    px-5
-    py-2
-    font-mono
-    text-[10px]
-    md:text-xs
-    uppercase
-    tracking-[0.25em]
-    text-white/70
-    transition-all
-    duration-300
-    hover:border-purple-400/60
-    hover:bg-purple-500/10
-    hover:text-white
-    hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]
-  "
+  mb-8
+  inline-flex
+  items-center
+  gap-4
+  rounded-full
+  border
+  border-purple-400/20
+  bg-purple-500/10
+  px-6
+  py-3
+  backdrop-blur-md
+  transition-all
+  duration-300
+  hover:scale-[1.02]
+  hover:bg-purple-500/15
+"
           >
-            <span className="text-white/75">Powered by</span>
+            <img
+              src="/assets/images/cccl-header-light.svg"
+              alt="CCCL"
+              className="h-10 w-auto object-contain"
+            />
 
-            <span className="font-bold text-white group-hover:text-purple-300">
-              CCCL
-            </span>
+            <div className="flex flex-col items-start text-left">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-purple-300">
+                Powered by
+              </span>
+
+              <div className="flex items-center gap-2">
+                <span className="text-gradient-pink font-bold">CCCL</span>
+
+                <span className="font-semibold text-white text-sm md:text-base">
+                  Claude Code Community London
+                </span>
+              </div>
+            </div>
           </a>
           <p className="text-white/40 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold mb-10 max-w-2xl px-4 font-mono">
             Empowering Female Developers • 24-Hour Offline Grand Finale •
