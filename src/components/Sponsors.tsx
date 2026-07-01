@@ -10,6 +10,22 @@ export default function Sponsors() {
       logo: "/assets/images/gdg-pec.webp",
     },
     {
+      name: "GDG IARE",
+      logo: "/assets/images/gdgc_iare.jpg",
+    },
+    {
+      name: "GDG IAE",
+      logo: "/assets/images/gdg_iae.png",
+    },
+    {
+      name: "GDG MCET",
+      logo: "/assets/images/gdg_mcet.png",
+    },
+    {
+      name: "GDG TMSL",
+      logo: "/assets/images/gdgc_tmsl.jpg",
+    },
+    {
       name: "IEEE DDS-Sairam",
       logo: "/assets/images/deis-sairam.jpeg",
     },

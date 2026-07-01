@@ -446,6 +446,73 @@ export default function About({ onRegisterClick }: AboutProps) {
               </div>
             </motion.div>
           </div>
+          {/* Gold Partners */}
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            {" "}
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="text-xs uppercase tracking-[0.25em] text-purple-400 font-extrabold border border-brand-pink/20 bg-brand-pink/5 rounded-full px-4 py-3 inline-block mb-3 animate-pulse">
+                Premium Sponsors
+              </span>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+                Our <span className="text-gradient-pink">Gold Partners</span>
+              </h2>
+
+              <p className="text-white/60">
+                Supporting innovation and empowering the next generation of
+                women builders.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* GitHub */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[340px] md:max-w-[380px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
+              >
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-col items-center justify-center w-full h-full"
+                >
+                  <div className="flex-1 w-full flex items-center justify-center p-4">
+                    <img
+                      src="/assets/images/GitHub_Lockup_White_Clearspace.png"
+                      alt="GitHub"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                </a>
+              </motion.div>
+
+              {/* Wonderla */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[340px] md:max-w-[380px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
+              >
+                <a
+                  href="https://www.wonderla.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-col items-center justify-center w-full h-full"
+                >
+                  <div className="flex-1 w-full flex items-center justify-center p-4">
+                    <img
+                      src="/assets/images/wonderla.png"
+                      alt="Wonderla"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                </a>
+              </motion.div>
+            </div>
+          </div>
 
           {/* Co-Organizers Gratitude Frame (Intellexa REC and Rajalakshmi Engineering College) */}
           <div>
@@ -510,9 +577,6 @@ export default function About({ onRegisterClick }: AboutProps) {
                     rel="noreferrer"
                     className="flex flex-col items-center justify-center w-full h-full text-inherit"
                   >
-                    <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase font-mono text-center">
-                      Event & Technology Partner
-                    </h4>
                     <div className="flex-1 w-full flex items-center justify-center p-4">
                       <img
                         src="/assets/images/intellexa_logo.png"
