@@ -69,10 +69,6 @@ export default function Sponsors() {
       logo: "/assets/images/CODESAPIENS.jpeg",
     },
     {
-      name: "DevRel Squad",
-      logo: "/assets/images/DEVRELSQUAD.jpeg",
-    },
-    {
       name: "Chennai React",
       logo: "/assets/images/CHENNAIREACT.jpeg",
     },
@@ -84,10 +80,7 @@ export default function Sponsors() {
       name: "Code on jvm",
       logo: "/assets/images/CODEONJVM.jpeg",
     },
-    {
-      name: "AI geeks",
-      logo: "/assets/images/AIGEEKS.png",
-    },
+
     {
       name: "WomenTech Network Team",
       logo: "/assets/images/WOMENTECHNETWORK.png",
