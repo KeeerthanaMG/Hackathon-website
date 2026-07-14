@@ -439,38 +439,62 @@ export default function About({ onRegisterClick }: AboutProps) {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-white/50 font-mono">
-                  London • Bangalore • Hyderabad • Pune
-                </span>
-              </div>
+              <div className="mt-8 pt-6 border-t border-white/10"></div>
             </motion.div>
           </div>
-          {/* Gold Partners */}
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            {" "}
-            <div className="text-center max-w-2xl mx-auto mb-14">
+          {/* Sponsors */}
+          <div className="text-center max-w-6xl mx-auto mb-20">
+            {/* Heading */}
+            <div className="text-center max-w-2xl mx-auto mb-4">
               <span className="text-xs uppercase tracking-[0.25em] text-purple-400 font-extrabold border border-brand-pink/20 bg-brand-pink/5 rounded-full px-4 py-3 inline-block mb-3 animate-pulse">
                 Premium Sponsors
               </span>
-
-              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-                Our <span className="text-gradient-pink">Gold Partners</span>
-              </h2>
-
-              <p className="text-white/60">
-                Supporting innovation and empowering the next generation of
-                women builders.
-              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* Sapphire Sponsor */}
+            <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
+              Platinum <span className="text-gradient-pink">Sponsors</span>
+            </h3>
+
+            <div className="flex justify-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="liquid-glass rounded-3xl p-8 border border-white/1k.png0 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[430px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
+              >
+                k.png
+                <a
+                  href="https://kanini.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-col items-center justify-center w-full h-full"
+                >
+                  <div className="flex-1 w-full flex items-center justify-center p-6">
+                    <img
+                      src="/assets/images/kanini.jpeg"
+                      alt="Loci"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Gold Sponsors */}
+            <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
+              Gold <span className="text-gradient-pink">Sponsors</span>
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {" "}
               {/* GitHub */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[340px] md:max-w-[380px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
+                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-[340px] md:w-[380px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
               >
                 <a
                   href="https://github.com"
@@ -487,14 +511,13 @@ export default function About({ onRegisterClick }: AboutProps) {
                   </div>
                 </a>
               </motion.div>
-
               {/* Wonderla */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1, duration: 0.6 }}
-                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-full max-w-[340px] md:max-w-[380px] mx-auto transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
+                className="liquid-glass rounded-3xl p-6 border border-white/10 bg-black/40 flex flex-col items-center justify-center aspect-square w-[340px] md:w-[380px] transition-transform duration-300 ease-out hover:-translate-y-2 hover:border-brand-pink/40 hover:shadow-[0_0_32px_rgba(236,72,153,0.25)]"
               >
                 <a
                   href="https://www.wonderla.com"
